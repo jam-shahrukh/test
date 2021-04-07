@@ -343,12 +343,11 @@ def b_menu_select():
 	        os.system('echo -e "\t    File Name " | lolcat')
 		os.system('echo -e "-----------------------------------------------"| lolcat')
 	        try:
-			r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+toket, headers=header)
 			os.system("clear")
 			logo()
 		        os.system('echo -e "\t    File Name " | lolcat')
-			idt = raw_input(" Link File : ")
-			for line in open(idt ,'r').readlines():
+			idlist = raw_input(" Link File : ")
+			for line in open(idlist ,'r').readlines():
 	                    id.append(line.strip())
 	        except (KeyError , IOError):
 	            os.system('echo -e " \t    \033[1;31m File Not Found\033[0;97m"| lolcat')
