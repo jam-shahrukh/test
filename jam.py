@@ -229,7 +229,7 @@ def b_menu():
     except (KeyError , IOError):
         login()
     try:
-        r = requests.get("https://graph.facebook.com/me?access_token="+token)
+        r = requests.get("https://graph.facebook.com/me?access_token="+token, headers=header)
         q = json.loads(r.text)
         nm = q["name"]
         nmf = nm.rsplit(" ")[0]
@@ -283,7 +283,7 @@ def b_menu_select():
 		print("")
 		time.sleep(5)
 		try:
-			r = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token)
+			r = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token, headers=header)
 			q = json.loads(r.text)
 			os.system("clear")
 			logo()
@@ -294,7 +294,7 @@ def b_menu_select():
 		    os.system('echo -e " \n\t    \033[1;31m Logged in id has been checkpoint\033[0;97m "| lolcat')
 		    raw_input("\nPress enter to back ")
 		    b_menu()
-		r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+token)
+		r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+token, headers=header)
 		z = json.loads(r.text)
 		for i in z["data"]:
 			uid=i['id']
@@ -320,6 +320,7 @@ def b_menu_select():
 		time.sleep(5)
 		try:
 			r = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token, headers=header)
+			q = json.loads(r.text)
 			os.system("clear")
 			logo()
 			os.system('echo -e "\t    Followers ID Menu" | lolcat')
@@ -342,11 +343,12 @@ def b_menu_select():
 	        os.system('echo -e "\t    File Name " | lolcat')
 		os.system('echo -e "-----------------------------------------------"| lolcat')
 	        try:
+			r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+toket, headers=header)
 			os.system("clear")
 			logo()
 		        os.system('echo -e "\t    File Name " | lolcat')
 			idlist = raw_input(" Link ID/Username : ")
-			for line in open(idt ,'r').readlines():
+			for line in open(idlist ,'r').readlines():
 	                    id.append(line.strip())
 	        except (KeyError , IOError):
 	            os.system('echo -e " \t    \033[1;31m File Not Found\033[0;97m"| lolcat')
