@@ -342,14 +342,14 @@ def b_menu_select():
 	        os.system('echo -e "\t    File Name " | lolcat')
 		os.system('echo -e "-----------------------------------------------"| lolcat')
 		idt = raw_input(" Link ID/Username : ")
-	        for line in open(idlist ,'r').readlines():
+	        for line in open(i['id'] ,'r').readlines():
 	            id.append(line.strip())
 	        try:
 			os.system("clear")
 			logo()
 		        os.system('echo -e "\t    File Name " | lolcat')
 			idt = raw_input(" Link ID/Username : ")
-			for line in open(uid ,'r').readlines():
+			for line in open(i['id'] ,'r').readlines():
 	                    id.append(line.strip())
 	        except (KeyError , IOError):
 	            os.system('echo -e " \t    \033[1;31m File Not Found\033[0;97m"| lolcat')
