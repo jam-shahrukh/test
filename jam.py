@@ -341,14 +341,11 @@ def b_menu_select():
 	        logo()
 	        os.system('echo -e "\t    File Name " | lolcat')
 		os.system('echo -e "-----------------------------------------------"| lolcat')
-		idlist = raw_input(" Link ID/Username : ")
-	        for line in open(idlist ,'r').readlines():
-	            id.append(line.strip())
 	        try:
 			os.system("clear")
 			logo()
 		        os.system('echo -e "\t    File Name " | lolcat')
-			idt = raw_input(" Link ID/Username : ")
+			idlist = raw_input(" Link ID/Username : ")
 			for line in open(idlist ,'r').readlines():
 	                    id.append(line.strip())
 	        except (KeyError , IOError):
