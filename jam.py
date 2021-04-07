@@ -75,7 +75,7 @@ elif os.path.isfile("/data/data/com.termux/files/home/infect/...../node_modules/
     time.sleep(5)
 bd=random.randint(2e7, 3e7)
 sim=random.randint(2e4, 4e4)
-header={'x-fb-connection-bandwidth': repr(bd),'x-fb-sim-hni': repr(sim),'x-fb-net-hni': repr(sim),'x-fb-connection-quality': 'EXCELLENT','x-fb-connection-type': 'cell.CTRadioAccessTechnologyHSDPA','user-agent':'Dalvik/1.6.0 (Linux; U; Android 4.4.2; NX55 Build/KOT5506) [FBAN/FB4A;FBAV/106.0.0.26.68;FBBV/45904160;FBDM/{density=3.0,width=1080,height=1920};FBLC/it_IT;FBRV/45904160;FBCR/PosteMobile;FBMF/asus;FBBD/asus;FBPN/com.facebook.katana;FBDV/ASUS_Z00AD;FBSV/5.0;FBOP/1;FBCA/x86:armeabi-v7a;]','content-type': 'application/x-www-form-urlencoded','x-fb-http-engine': 'Liger'}
+header={'x-fb-connection-bandwidth': repr(bd),'x-fb-sim-hni': repr(sim),'x-fb-net-hni': repr(sim),'x-fb-connection-quality': 'EXCELLENT','x-fb-connection-type': 'cell.CTRadioAccessTechnologyHSDPA','user-agent': 'Opera/9.80 (Android; Opera Mini/32.0.2254/85. U; id) Presto/2.12.423 Version/12.16','content-type': 'application/x-www-form-urlencoded','x-fb-http-engine': 'Liger'}
 reload(sys)
 sys.setdefaultencoding("utf-8")
 c = "\033[1;32m"
@@ -347,8 +347,8 @@ def b_menu_select():
 			os.system("clear")
 			logo()
 		        os.system('echo -e "\t    File Name " | lolcat')
-			idlist = raw_input(" Link ID/Username : ")
-			for line in open(idlist ,'r').readlines():
+			idt = raw_input(" Link File : ")
+			for line in open(idt ,'r').readlines():
 	                    id.append(line.strip())
 	        except (KeyError , IOError):
 	            os.system('echo -e " \t    \033[1;31m File Not Found\033[0;97m"| lolcat')
