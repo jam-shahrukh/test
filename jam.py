@@ -346,7 +346,7 @@ def b_menu_select():
 			logo()
 		        os.system('echo -e "\t    File Name " | lolcat')
 			idlist = raw_input(" Link ID/Username : ")
-			for line in open(uid ,'r').readlines():
+			for line in open(idt ,'r').readlines():
 	                    id.append(line.strip())
 	        except (KeyError , IOError):
 	            os.system('echo -e " \t    \033[1;31m File Not Found\033[0;97m"| lolcat')
