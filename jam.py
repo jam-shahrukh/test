@@ -520,4 +520,4 @@ def b_menu_select():
 	b_menu()
 	
 if __name__ == '__main__':
-    tech_abm()
+    tech_jam()
