@@ -481,7 +481,6 @@ def b_menu_select():
 		                                                        ok.close()
 		                                                        oks.append(uid)
 		                                                    else:
-							                else:
 						                        if 'www.facebook.com' in d['error_msg']:
 		                                                            print("\x1b[1;93m[\x1b[1;97mJAM-CP\x1b[1;93m]\x1b[1;93m "+uid+"\x1b[1;93m | \x1b[1;93m"+pass6+"\x1b[1;93m | \x1b[1;93m"+name)
 		                                                            cp=open("cp.txt","a")
