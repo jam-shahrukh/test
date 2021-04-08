@@ -114,7 +114,7 @@ def menu():
 	try:
 		otw = requests.get('https://graph.facebook.com/me?access_token='+token)
 		a = json.loads(otw.text)
-		name = a['Name']
+		nm = q["name"]
 		id = a['id']
 	except KeyError:
 		os.system('clear')
@@ -128,8 +128,7 @@ def menu():
 		('python2 jam.py')
 	os.system("clear")
 	print banner
-	print "|[✓] Name: " + name
-	print "|[✓] ID  : " + id
+	print("\t  "+c+"User ID"+ok+c2)
 	print (47*"-")
 	print "[1] Start Cloning."
 	print "[2] Clone With Pass Choice."
