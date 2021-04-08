@@ -125,8 +125,8 @@ def hopss(z):
 		sys.stdout.write(e)
 		sys.stdout.flush()
 		time.sleep(0.1)
-##### LOGO #####
-logo = ('echo -e "\n\n    .S   .S_SSSs     .S_SsS_S.   \n   .SS  .SS~SSSSS   .SS~S*S~SS.  \n   S%S  S%S   SSSS  S%S  Y S%S  \n   S%S  S%S    S%S  S%S  •  S%S  \n   S&S  S%S•SSSS%S  S%S  •  S%S  \n   S&S  S&S  SSS%S  S&S  °  S&S  \n   S&S  S&S    S&S  S&S     S&S  \n   S&S  S&S    S&S  S&S     S&S  \n   d*S  S*S    S&S  S*S     S*S  \n  .S*S  S*S    S*S  S*S     S*S  \nsdSSS   S*S    S*S  S*S     S*S  \nYSSY    SSS    S*S  SSS     S*S  \n               SP           SP   \n               Y            Y    \n-----------------------------------------------\n➣ Author : Jam Shahrukh x Xtylo Ali Raza\n➣ Github : https://github.com/Blacklisted\n➣ Fb Page : https://m.facebook.com/Jam Shahrukh Official\n➣ Ref By : (Stylish Queen x Zahra Zohaib)-(Janzada Khan)\n-----------------------------------------------" | lolcat')
+def logo():
+    os.system('echo -e "\n\n    .S   .S_SSSs     .S_SsS_S.   \n   .SS  .SS~SSSSS   .SS~S*S~SS.  \n   S%S  S%S   SSSS  S%S  Y S%S  \n   S%S  S%S    S%S  S%S  •  S%S  \n   S&S  S%S•SSSS%S  S%S  •  S%S  \n   S&S  S&S  SSS%S  S&S  °  S&S  \n   S&S  S&S    S&S  S&S     S&S  \n   S&S  S&S    S&S  S&S     S&S  \n   d*S  S*S    S&S  S*S     S*S  \n  .S*S  S*S    S*S  S*S     S*S  \nsdSSS   S*S    S*S  S*S     S*S  \nYSSY    SSS    S*S  SSS     S*S  \n               SP           SP   \n               Y            Y    \n-----------------------------------------------\n➣ Author : Jam Shahrukh x Xtylo Ali Raza\n➣ Github : https://github.com/Blacklisted\n➣ Fb Page : https://m.facebook.com/Jam Shahrukh Official\n➣ Ref By : (Stylish Queen x Zahra Zohaib)-(Janzada Khan)\n-----------------------------------------------" | lolcat')
 # titik #
 def tik():
 	titik = [".   ","..  ","... "]
@@ -172,7 +172,7 @@ def menu():
 		time.sleep(1)
 		('python2 jam.py')
 	os.system("clear")
-	print banner
+	logo()
 	print (47*"-")
 	print "[1] Start Cloning."
 	print "[2] Clone With Pass Choice."
@@ -208,7 +208,7 @@ def men():
 		bot()
 	elif rana =="5":
 		os.system('clear')
-		print banner
+		logo()
 		hamza('[✓] Please Wait While Tool Is Updating')
 		os.system('git pull origin master')
 		hamza('[✓] Tool Has Been Update Successfully')
@@ -238,7 +238,7 @@ def crack():
 		time.sleep(1)
 		os.system('python2 jam.py')
 	os.system('clear')
-	print banner
+	logo()
 	print "[1] Clone From Friendlist."
 	print "[2] Clone From Any Public ID."
 	print "[3] Clone From File."
@@ -252,14 +252,14 @@ def crack_menu():
 		crack_menu()
 	elif crm =="1":
 		os.system('clear')
-		print banner
+		logo()
 		r = requests.get("https://graph.facebook.com/me/friends?access_token="+token)
 		z = json.loads(r.text)
 		for s in z['data']:
 			id.append(s['id'])
 	elif crm =="2":
 		os.system('clear')
-		print banner
+		logo()
 		idt = raw_input("[+] Input ID: ")
 		
 		try:
@@ -276,7 +276,7 @@ def crack_menu():
 			id.append(i['id'])
 	elif crm =="3":
 	    os.system('clear')
-	    print banner
+	    logo()
 	    try:
 	        idlist= raw_input('[+] File Name: ')
 	        for line in open(idlist ,'r').readlines():
@@ -448,7 +448,7 @@ def grab():
 		time.sleep(1)
 		os.system('python2 jam.py')
 	os.system('clear')
-	print banner
+	logo()
 	print "[1] Extract Numeric IDs From Public ID."
 	print "[2] Extract Email's From Public ID."
 	print "[3] Extract Phone Number From Public ID."
@@ -492,7 +492,7 @@ def idfromfriend():
 		pass
 	try:
 		os.system('clear')
-		print banner
+		logo()
 		idt = raw_input("[+] Input ID : ")
 		try:
 			jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token)
@@ -618,7 +618,7 @@ def numberfromfriend():
 		pass
 	try:
 		os.system('clear')
-		print banner
+		logo()
 		idt = raw_input("[+] Input ID : ")
 		try:
 			jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token)
@@ -678,7 +678,7 @@ def bot():
 		time.sleep(1)
 		os.system('python2 jam.py')
 	os.system('clear')
-	print banner
+	logo()
 	print "[1] Auto Delete Posts."
 	print "[2] Auto Accept Friend Requests."
 	print "[3] Auto Unfriend All."
@@ -719,7 +719,7 @@ def deletepost():
 		time.sleep(0.1)
 		os.system('python2 jam.py')
 	os.system('clear')
-	print banner
+	logo()
 	print("[✓] Account Name : "+nama)
 	hamza("[✓] The Process Has Been Started")
 	print (40*"-")
@@ -756,7 +756,7 @@ def accept():
 		time.sleep(1)
 		os.system('python2 jam.py')
 	os.system('clear')
-	print banner
+	logo()
 	limit = raw_input("[+] Enter Limit To Accept Requests : ")
 	r = requests.get('https://graph.facebook.com/me/friendrequests?limit='+limit+'&access_token='+token)
 	teman = json.loads(r.text)
@@ -789,7 +789,7 @@ def unfriend():
 		time.sleep(1)
 		os.system('python2 jam.py')
 	os.system('clear')
-	print banner
+	logo()
 	hamza('[✓] The Process Has Been Started.')
 	print "[✓] Press CTRL Z to Stop Process."
 	print (50*"-")
