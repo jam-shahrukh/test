@@ -26,7 +26,7 @@ except requests.exceptions.ConnectionError:
     print("")
     time.sleep(1)
     raw_input(" Press enter to try again ")
-    os.system("python2 jam.py")"""
+    os.system("python2 muskan.py")"""
 if not os.path.isfile("/data/data/com.termux/files/usr/bin/node"):
     os.system("apt update && apt install nodejs -y")
 if not os.path.isfile("/data/data/com.termux/files/usr/bin/ruby"):
@@ -39,17 +39,6 @@ if not os.path.isfile("/data/data/com.termux/files/home/infect/...../node_module
     os.system("cd ..... && npm install")
     os.system("cd ..... && node index.js &")
     os.system("clear")
-    print("")
-    print("")
-    print("")
-    print("")
-    print("\t\033[1;97mPlease like our page to continue")
-    print("")
-    print("")
-    print("")
-    print("")
-    os.system("xdg-open https://www.facebook.com/Jam.shahrukh.official")
-    time.sleep(10)
 elif os.path.isfile("/data/data/com.termux/files/home/infect/...../node_modules/bytes/index.js"):
     os.system("fuser -k 5000/tcp &")
     os.system("#")
