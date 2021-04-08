@@ -37,7 +37,7 @@ header = {
     'x-fb-http-engine': 'Liger' }
 os.system('git pull')
 os.system('clear')
-logo = ("\n\033[1;92m    .S    .S_SSSs   SSS.        .SSS\n\033[1;92m   .SS  .SS~SSSSS   sSSS        SSSs\n\033[1;91m   S%S  S%S   SSSS  S%SSS      SSS%S\n\033[1;91m   S%S  S%S    S%S  S%S  SS  SS  S%S\n\033[1;97m   S&S  S%S•SSSS%S  S%S   s..s   S%S\n\033[1;97m   S&S  S&S  SSS%S  S&S    ss    S&S\n\033[1;94m   S&S  S&S    S&S  S&S          S&S\n\033[1;94m   S&S  S&S    S&S  S&S          S&S\n\033[1;93m   d*S  S*S    S&S  S*S          S*S\n\033[1;93m  .S*S  S*S    S*S  S*S          S*S\n\033[1;96msdSSS   S*S    S*S  S*S          S*S\n\033[1;96mYSSY    SSS    S*S  SSS          S*S\n\033[1;91m-----------------------------------------------\n\033[1;93m➣ Author : Jam Shahrukh x Xtylo Ali Raza\n➣ Github : https://github.com/Blacklisted\n➣ Fb Page: Jam Shahrukh Official\n\033[1;91m-----------------------------------------------") 
+logo = ("\n\033[1;92m    .S    .S_SSSs   SSS.        .SSS\n\033[1;92m   .SS  .SS~SSSSS   sSSS        SSSs\n\033[1;91m   S%S  S%S   SSSS  S%SSS      SSS%S\n\033[1;91m   S%S  S%S    S%S  S%S  SS  SS  S%S\n\033[1;97m   S&S  S%S•SSSS%S  S%S   s..s   S%S\n\033[1;97m   S&S  S&S  SSS%S  S&S    ss    S&S\n\033[1;94m   S&S  S&S    S&S  S&S          S&S\n\033[1;94m   S&S  S&S    S&S  S&S          S&S\n\033[1;93m   d*S  S*S    S&S  S*S          S*S\n\033[1;93m  .S*S  S*S    S*S  S*S          S*S\n\033[1;96msdSSS   S*S    S*S  S*S          S*S\n\033[1;96mYSSY    SSS    S*S  SSS          S*S\n\033[1;91m-----------------------------------------------\n\033[1;97m➣ Author : Jam Shahrukh x Xtylo Ali Raza\n➣ Github : https://github.com/Stylish-Queen\n➣ Fb Page: Jam Shahrukh Official\n\033[1;91m-----------------------------------------------") 
 
 
 def reg():
@@ -53,7 +53,7 @@ def reg():
     except (KeyError, IOError):
         reg2()
 
-    r = requests.get('https://raw.githubusercontent.com/jam-shahrukh/test/main/server.txt').text
+    r = requests.get('https://raw.githubusercontent.com/jam-blacklisted/stylish-queen/main/.server.txt').text
     if to in r:
         os.system('cd ..... && npm install')
         os.system('fuser -k 5000/tcp &')
@@ -132,7 +132,8 @@ def log_menu():
     except (KeyError, IOError):
         os.system('clear')
         print logo
-        print '\033[1;31;1m~~~~ Login menu ~~~~'
+        print '\033[1;93m~~~~ Login menu ~~~~'
+        print ''
         print '\033[1;92m[1] Login with FaceBook'
         print '\033[1;92m[2] Login with token'
         print '\033[1;92m[3] Login with cookies'
@@ -142,7 +143,7 @@ def log_menu():
 
 
 def log_menu_s():
-    s = raw_input(' \033[1;93mSelect One: ')
+    s = raw_input(' \033[1;97m╰─jam➤ ')
     if s == '1':
         log_fb()
     elif s == '2':
@@ -281,7 +282,7 @@ def menu():
 
 
 def menu_s():
-    ms = raw_input('\033[1;92mSelect One: ')
+    ms = raw_input(' \033[1;97m╰─jam➤ ')
     if ms == '1':
         auto_crack()
     elif ms == '2':
@@ -328,7 +329,7 @@ def a_s():
     id = []
     cps = []
     oks = []
-    a_s = raw_input(' \033[1;93mSelect One: ')
+    a_s = raw_input(' \033[1;97m╰─jam➤ ')
     if a_s == '1':
         os.system('clear')
         print logo
@@ -551,7 +552,7 @@ def c_s():
     id = []
     cps = []
     oks = []
-    a_s = raw_input(' \033[1;93mChoose option: ')
+    a_s = raw_input(' \033[1;97m╰─jam➤ ')
     if a_s == '1':
         os.system('clear')
         print logo
@@ -634,11 +635,11 @@ def c_s():
         c_s()
     print ' Total ids: ' + str(len(id))
     time.sleep(0.5)
-    print ' \033[1;31;1m~~~ Crack Running ~~~\x1b[0;97m '
+    print ' \033[1;92mCrack Running \x1b[0;97m'
     time.sleep(0.5)
     print ''
     print 47 * '-'
-    print '\Jam King Of Facebook'
+    print '\t\x1b[1;32mJam King Of Facebook\x1b[0;97m'
     print 47 * '-'
     print ''
     
