@@ -180,7 +180,7 @@ def login():
 		    else:
 		        print ('[!]Number/User Id/ Password Is Wrong !')
 		        time.sleep(1)
-		        login()
+		        methodlogin()
 
 
 def menu():
@@ -192,7 +192,7 @@ def menu():
 		print"\x1b[1;31mToken invalid"
 		os.system('rm -rf login.txt')
 		time.sleep(1)
-		login()
+		methodlogin()
 	try:
 		otw = requests.get('https://graph.facebook.com/me?access_token='+toket)
 		a = json.loads(otw.text)
@@ -203,7 +203,7 @@ def menu():
 		print"\033[1;31mYour Account is on Checkpoint"
 		os.system('rm -rf login.txt')
 		time.sleep(1)
-		login()
+		methodlogin()
 	except requests.exceptions.ConnectionError:
 		print"\x1b[1;97mThere is no internet connection"
 		keluar()
@@ -249,7 +249,7 @@ def super():
 		print"\x1b[1;97mToken invalid"
 		os.system('rm -rf login.txt')
 		time.sleep(1)
-		login()
+		methodlogin()
 	os.system('clear')
 	print logo
 	print "\033[1;97m✧ \033[1;97m1.\x1b[1;97mCrack From Friend List."
