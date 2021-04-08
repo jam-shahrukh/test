@@ -128,7 +128,6 @@ def menu():
 		('python2 jam.py')
 	os.system("clear")
 	print banner
-	print("\t  "+c+"User ID"+ok+c2)
 	print (47*"-")
 	print "[1] Start Cloning."
 	print "[2] Clone With Pass Choice."
