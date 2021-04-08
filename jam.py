@@ -15,7 +15,7 @@ except ImportError:
     os.system("pip2 install lolcat")
     os.system("python2 jam.py")
 os.system("clear")
-"""
+
 try:
     my = requests.get("https://www.facebook.com/Jam.shahrukh.official")
 except requests.exceptions.ConnectionError:
