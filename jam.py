@@ -97,7 +97,6 @@ back = 0
 id = []
 
 def tlogin():
-	global
 	os.system('clear')
 	logo()
 	username = raw_input("[+] TOOL USERNAME: ")
