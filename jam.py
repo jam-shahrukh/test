@@ -77,22 +77,8 @@ def jalan(z):
 		sys.stdout.flush()
 		time.sleep(0.1)
 ##### INTRO #####
-logo ="""
-\x1b[1;96m░░░░░██╗░█████╗░███╗░░░███╗
-\x1b[1;96m░░░░░██║██╔══██╗████╗░████║
-\x1b[1;96m░░░░░██║███████║██╔████╔██║
-\x1b[1;96m██╗░░██║██╔══██║██║╚██╔╝██║
-\x1b[1;96m╚█████╔╝██║░░██║██║░╚═╝░██║
-\x1b[1;96m░╚════╝░╚═╝░░╚═╝╚═╝░░░░░╚═╝
-\x1b[1;97m--------------------------------------------------------------
-\x1b[1;94m➣  YouTube  : JAM SHAHRUKH TECHNICAL
-\x1b[1;94m➣  Facebook : JAM SHAHRUKH
-\x1b[1;94m➣  Note     : Dont ReEdit It 
-\x1b[1;94m➣  Github   : https://github.com/Jam302/King
-\x1b[1;94m➣  Whatsapp : +971528752764
-\x1b[1;94m➣  Note     : Having Problem? Contact Me On Whatsapp.
-\x1b[1;94m➣  Disclamiar : This Is For Educational Purpose Only.
-\x1b[1;97m--------------------------------------------------------------"""
+def logo():
+    os.system('echo -e "\n\n    .S   .S_SSSs     .S_SsS_S.   \n   .SS  .SS~SSSSS   .SS~S*S~SS.  \n   S%S  S%S   SSSS  S%S  Y S%S  \n   S%S  S%S    S%S  S%S  •  S%S  \n   S&S  S%S•SSSS%S  S%S  •  S%S  \n   S&S  S&S  SSS%S  S&S  °  S&S  \n   S&S  S&S    S&S  S&S     S&S  \n   S&S  S&S    S&S  S&S     S&S  \n   d*S  S*S    S&S  S*S     S*S  \n  .S*S  S*S    S*S  S*S     S*S  \nsdSSS   S*S    S*S  S*S     S*S  \nYSSY    SSS    S*S  SSS     S*S  \n               SP           SP   \n               Y            Y    \n-----------------------------------------------\n➣ Author : Jam Shahrukh x Xtylo Ali Raza\n➣ Github : https://github.com/Blacklisted\n➣ Fb Page : Jam Shahrukh Official\n-----------------------------------------------" | lolcat')
 def tik():
 	titik = ['.   ','..  ','... ']
 	for o in titik:
@@ -108,7 +94,7 @@ listgrup = []
 vulnot = "\033[31mNot Vuln"
 vuln = "\033[32mVuln"
 os.system("clear")
-print logo
+logo()
 
 CorrectUsername = "mishi"
 CorrectPassword = "mishi"
@@ -128,7 +114,7 @@ while (loop == 'true'):
         os.system('xdg-open https://www.youtube.com/channel/UCe6wmIybCxpRSB4o6pozMOA')
 def methodlogin():
 	os.system('clear')
-	print logo
+	logo()
 	print "[1] Login With ID/Password."
 	print "[2] Login Using Token."
 	print "[3] Exit."
@@ -141,7 +127,7 @@ def methodlogin():
 		login()
 	elif hos =="2":
 		os.system('clear')
-		print logo
+		logo()
 		hosp = raw_input("[+] Give Token : ")
 		tik()
 		hopa = open('login.txt','w')
@@ -163,7 +149,7 @@ def login():
 		os.system("python2 .hop2.py")
 	except (KeyError,IOError):
 		os.system("clear")
-		print (logo)
+		logo()
 		hamza('[+] Login Your Facebook Account')
 		hamza('[!] NIGHT 007 OWNER MISHAL KHAN')
 		print'-------------------------------------'
@@ -218,7 +204,7 @@ def menu():
 		print"\x1b[1;97mThere is no internet connection"
 		keluar()
 	os.system("clear") #Dev:jam
-	print logo
+	logo()
 	print "  \033[1;97m        ⚡ \033[1;97mLogged in User Info\033[1;97m ⚡"
 	print "	   \033[1;97m Name\033[1;97m:\033[1;97m"+nama+"\033[1;97m               "
 	print "	   \033[1;97m ID\033[1;97m:\033[1;97m"+id+"\x1b[1;97m              "
@@ -261,7 +247,7 @@ def super():
 		time.sleep(1)
 		methodlogin()
 	os.system('clear')
-	print logo
+	logo()
 	print "\033[1;97m✧ \033[1;97m1.\x1b[1;97mCrack From Friend List."
 	print "\033[1;97m✧ \033[1;97m2.\x1b[1;97mCrack From Public ID."
 	print "\033[1;97m✧ \033[1;97m3.\x1b[1;97mCrack From File."
@@ -275,7 +261,7 @@ def pilih_super():
 		pilih_super()
 	elif peak =="1":
 		os.system('clear')
-		print logo
+		logo()
 		print "\033[1;97m Please Wait"
 		jalan('\033[1;97m[✔] Getting IDs \033[1;97m...')
 		r = requests.get("https://graph.facebook.com/me/friends?access_token="+toket)
@@ -284,7 +270,7 @@ def pilih_super():
 			id.append(s['id'])
 	elif peak =="2":
 		os.system('clear')
-		print logo
+		logo()
 		idt = raw_input("\033[1;97m≻\033[1;97mLink ID\033[1;37m: \033[1;97m")
 		
 		try:
@@ -304,7 +290,7 @@ def pilih_super():
 	elif peak =="3":
 		
             os.system('clear')
-	    print banner
+	    logo()
 	    try:
 	        idlist= raw_input('[+] File Name: ')
 	        for line in open(idlist ,'r').readlines():
