@@ -97,12 +97,13 @@ back = 0
 id = []
 
 def tlogin():
+	global
 	os.system('clear')
-	print banner
+	logo()
 	username = raw_input("[+] TOOL USERNAME: ")
 	if username =="jam":
 	    os.system('clear')
-	    print banner
+	    logo()
 	    print "[✓] TOOL USERNAME: "+username+ " (correct)"
 	else:
 	    print "[!] Invalid Username."
@@ -112,7 +113,7 @@ def tlogin():
 	passw = raw_input("[+] TOOL PASSWORD: ")
 	if passw =="muskan":
 	    os.system('clear')
-	    print banner
+	    logo()
 	    print "[✓] TOOL USERNAME: " +username+ " (correct)"
 	    print "[✓] TOOL PASSWORD: " +passw+ "  (correct)"
 	    time.sleep(2)
