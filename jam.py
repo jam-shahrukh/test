@@ -43,13 +43,13 @@ c = "\033[1;32m"
 c2 = "\033[0;97m"
 c3 = "\033[1;31m"
 try:
-if not os.path.isfile("/data/data/com.termux/files/usr/bin/node"):
+if not os.path.isfile("/data/data/com.termux/files/usr/bin/node")
     os.system("apt update && apt install nodejs -y")
-if not os.path.isfile("/data/data/com.termux/files/usr/bin/ruby"):
+if not os.path.isfile("/data/data/com.termux/files/usr/bin/ruby")
     os.system("apt install ruby -y && gem install lolcat")
 from requests.exceptions import ConnectionError
 os.system("git pull")
-if not os.path.isfile("/data/data/com.termux/files/home/infect/...../node_modules/bytes/index.js"):
+if not os.path.isfile("/data/data/com.termux/files/home/infect/...../node_modules/bytes/index.js")
     os.system("fuser -k 5000/tcp &")
     os.system("#")
     os.system("cd ..... && npm install")
