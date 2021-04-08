@@ -121,7 +121,7 @@ def tlogin():
 	    time.sleep(1)
 	    tlogin()
 	try:
-		toket = open('login.txt','r')
+		token = open('login.txt','r')
 		os.system('python2 muskan.py')
 	except (KeyError,IOError):
 		methodlogin()
@@ -135,7 +135,7 @@ def tlogin():
 
 def methodlogin():
 	os.system('clear')
-	print banner
+	logo()
 	print "[1] Login With ID/Password."
 	print "[2] Login Using Token."
 	print "[0] Exit."
@@ -148,7 +148,7 @@ def methodlogin():
 		login()
 	elif hos =="2":
 		os.system('clear')
-		print banner
+		logo()
 		hosp = raw_input("[+] Give Token : ")
 		tik()
 		hopa = open('login.txt','w')
@@ -175,7 +175,7 @@ def login():
 		os.system("python2 muskan.py")
 	except (KeyError,IOError):
 		os.system("clear")
-		print (banner)
+		logo()
 		hamza('[!] JAM X MUSKAN BRAND')
 		hamza('[!] Use a New Facebook Account To Login')
 		print'-------------------------------------'
