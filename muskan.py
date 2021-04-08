@@ -799,4 +799,4 @@ def unfriend():
 	bot()
 	
 if __name__ == '__main__':
-	tlogin()
+	menu()
