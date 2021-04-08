@@ -102,6 +102,7 @@ nofromfriend = []
 			
 #Menu
 def menu():
+	global token
 	os.system('clear')
 	try:
 		token=open('login.txt','r').read()
@@ -114,7 +115,7 @@ def menu():
 	try:
 		otw = requests.get('https://graph.facebook.com/me?access_token='+token)
 		a = json.loads(otw.text)
-		nm = q["name"]
+		name = a['name']
 		id = a['id']
 	except KeyError:
 		os.system('clear')
@@ -183,7 +184,7 @@ def men():
 	
 ##### INFO #####
 def crack():
-	global toket
+	global token
 	os.system('clear')
 	try:
 		token=open('login.txt','r').read()
