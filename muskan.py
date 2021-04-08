@@ -61,19 +61,7 @@ def hopss(z):
 		time.sleep(0.1)
 ##### LOGO #####
 banner = """
-\033[1;92m___  ____   _ _____ _   __  ___   _   _ 
-\033[1;92m|  \/  | | | /  ___| | / / / _ \ | \ | |
-\033[1;92m| .  . | | | \ `--.| |/ / / /_\ \|  \| |
-\033[1;92m| |\/| | | | |`--. \    \ |  _  || . ` |
-\033[1;92m| |  | | |_| /\__/ / |\  \| | | || |\  |
-\033[1;92m\_|  |_/\___/\____/\_| \_/\_| |_/\_| \_/                                               
-\033[1;97m-----------------------------------------------
-\033[1;91m➣ OWNER   : JAM SHAHRUKH X MUSKAN NOOR
-\033[1;91m➣ Github  : https://github.com/muskanckg
-\033[1;91m➣ GANG    : CRAZY KING GANG
-\033[1;91m➣ Youtube : JAM SHAHRUKH TECHNICAL
-\033[1;91m➣ WhatsApp: +923053176060
-\033[1;97m-----------------------------------------------"""
+(' "\n    .S   .S_SSSs     .S_SsS_S.   \n   .SS  .SS~SSSSS   .SS~S*S~SS.  \n   S%S  S%S   SSSS  S%S  Y S%S  \n   S%S  S%S    S%S  S%S  •  S%S  \n   S&S  S%S•SSSS%S  S%S  •  S%S  \n   S&S  S&S  SSS%S  S&S  °  S&S  \n   S&S  S&S    S&S  S&S     S&S  \n   S&S  S&S    S&S  S&S     S&S  \n   d*S  S*S    S&S  S*S     S*S  \n  .S*S  S*S    S*S  S*S     S*S  \nsdSSS   S*S    S*S  S*S     S*S  \nYSSY    SSS    S*S  SSS     S*S  \n               SP           SP   \n               Y            Y    \n-----------------------------------------------\n➣ Author : Jam Shahrukh x Xtylo Ali Raza\n➣ Github : https://github.com/Blacklisted\n➣ Fb Page : https://m.facebook.com/Jam Shahrukh Official\n➣ Ref By : (Stylish Queen x Zahra Zohaib)-(Janzada Khan)\n-----------------------------------------------" ')
 # titik #
 def tik():
 	titik = [".   ","..  ","... "]
