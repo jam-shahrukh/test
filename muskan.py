@@ -128,7 +128,7 @@ def menu():
 		('python2 jam.py')
 	os.system("clear")
 	print banner
-	print "|[✓] Name: "+name
+	print "|[✓] Name: "+name"
 	print "|[✓] ID  : "+id
 	print (47*"-")
 	print "[1] Start Cloning."
