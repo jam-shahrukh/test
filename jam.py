@@ -6,20 +6,9 @@
 #Whatsapp : +923053176060
 #Pakistan Cyber Expert
 #Alone Coder 
-import os
-import sys
-import time
-import datetime
-import re
-import threading
-import json
-import random
-import requests
-import hashlib
-import cookielib
-import uuid
-from multiprocessing.pool import ThreadPool
-from requests.exceptions import ConnectionError
+try:
+    import os,sys,time,datetime,re,random,hashlib,threading,json,getpass,urllib,cookielib,requests
+    from multiprocessing.pool import ThreadPool
 except ImportError:
     os.system("pip2 install requests")
     os.system("pip2 install mechazine")
