@@ -16,7 +16,6 @@ except ImportError:
     os.system("pip2 install lolcat")
     os.system('python2 jam.py')
 os.system("clear")
-"""
 #Browser Setting
 bd=random.randint(2e7, 3e7)
 sim=random.randint(2e4, 4e4)
