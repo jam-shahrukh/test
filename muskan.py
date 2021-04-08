@@ -3,7 +3,6 @@
 # Originally Written By:Muhammad Hamza
 # Source : Python2"
 # Donot Recode It. 
-{
 #Import module
 try:
     import os,sys,time,datetime,random,hashlib,re,threading,json,urllib,cookielib,getpass,mechanize,requests
@@ -809,6 +808,6 @@ def unfriend():
 	print"[✓] The Process Has Been Completed."
 	raw_input("Press Enter To Back ")
 	bot()
-}	
+	
 if __name__ == '__main__':
-	menu())
+	menu()
