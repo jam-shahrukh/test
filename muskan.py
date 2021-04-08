@@ -100,7 +100,6 @@ def menu():
 		os.system('clear')
 		print"[!] Token Not Found"
 		os.system('rm -rf login.txt')
-		time.sleep(1)
 		os.system('python2 jam.py')
 	try:
 		otw = requests.get('https://graph.facebook.com/me?access_token='+toket)
@@ -116,7 +115,7 @@ def menu():
 	except requests.exceptions.ConnectionError:
 		print"[!] No Connection"
 		time.sleep(1)
-		('python2 jam.py')
+		os.system('python2 jam.py')
 	os.system("clear")
 	print banner
 	print "|[✓] Name: "+name
