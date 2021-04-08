@@ -114,7 +114,7 @@ def menu():
 	try:
 		otw = requests.get('https://graph.facebook.com/me?access_token='+toket)
 		a = json.loads(otw.text)
-		name = a['name']
+		z = q['name']
 		id = a['id']
 	except KeyError:
 		os.system('clear')
