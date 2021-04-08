@@ -311,7 +311,7 @@ def pilih_super():
 	for o in titik:
 		print("\r\033[1;97m[✔] Cloning Started\033[1;97m"+o),;sys.stdout.flush();time.sleep(1)
         print"""
-[!] To Stop Process Press CTRL Then Z
+print ('[!] To Stop Process Press CTRL Then Z')
 ---------------------------------------------------------"""		
 			
 	def main(arg):
