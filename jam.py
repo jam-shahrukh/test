@@ -265,7 +265,7 @@ def pilih_super():
 			id.append(s['id'])
 	elif peak =="2":
                 os.system('clear')
-                print logo
+                logo()
                 print '\033[1;31;1m~~~~ public cracking ~~~~'
                 print ''
                 print '\033[1;93m For example: 123 , 1234 , 1234, 786 , 12 , 1122'
@@ -296,7 +296,7 @@ def pilih_super():
 			
 	if peak =="3":
                 os.system('clear')
-                print logo
+                logo()
                 print '\033[1;31;1m~~~~ File cracking ~~~~'
                 print ''
                 print '\033[1;93m For example: 123 , 1234 , 1234, 786 , 12 , 1122'
