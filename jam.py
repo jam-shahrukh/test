@@ -281,7 +281,7 @@ def pilih_super():
                 idt = raw_input(' \033[1;93m[★]Enter id: ')
 		
 	try:
-		jok = requests.get('https://graph.facebook.com/' + idt + '/friends?access_token=' + token)
+		jok = requests.get('https://graph.facebook.com/' + idlist + '/friends?access_token=' + token)
 		op = json.loads(jok.text)
 		print"\033[1;97m[✔] Name\033[1;97m:\033[1;97m "+op["name"]
 	except KeyError:
@@ -289,7 +289,7 @@ def pilih_super():
 		raw_input("\n\033[1;97m[\033[1;97mBack\033[1;97m]")
 		super()
 		print"\033[1;97m[✔] Getting IDs..."
-		r = requests.get('https://graph.facebook.com/' + idlist + '/friends?access_token=' + token)
+		r = requests.get('https://graph.facebook.com/' + idt + '/friends?access_token=' + token)
 		z = json.loads(r.text)
 		for i in z['data']:
 			id.append(i['id'])
