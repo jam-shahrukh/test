@@ -313,7 +313,7 @@ def pilih_super():
 	        idlist= raw_input('[+] File Name: ')
 	        for line in open(idlist ,'r').readlines():
 	            id.append(line.strip())
-	    except IOError:
+	except IOError:
 	         print"[!] File Not Found."
 	         raw_input('Press Enter To Back. ')
                  super()
