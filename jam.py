@@ -274,8 +274,8 @@ def pilih_super():
 		r = requests.get('https://graph.facebook.com/' + idt + '/friends?access_token='+ toket)
 		q = json.loads(r.text)
 		for i in q['data']:
-		os.system('clear')
-		logo()
+		    os.system('clear')
+		    logo()
 		print"\033[1;97m[✔] Name\033[1;97m:\033[1;97m "+q["name"]
 		jalan('\033[1;97m[✔] Getting IDs \033[1;97m...')
         except (KeyError, IOError):
