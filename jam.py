@@ -286,8 +286,6 @@ def pilih_super():
                     nm = na.rsplit(' ')[0]
                     id.append(uid + '|' + nm
 	if peak =="2"
-		os.system('clear')
-		logo()
 		print '\033[1;31;1m~~~~ public cracking ~~~~'
                 print ''
                 print '\033[1;93m For example: 123 , 1234 , 1234, 786 , 12 , 1122'
