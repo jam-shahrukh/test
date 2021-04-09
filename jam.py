@@ -270,14 +270,22 @@ def pilih_super():
                 pass6 = raw_input(' \033[1;92m[6]Password: ')
                 pass7 = raw_input(' \033[1;92m[7]Password: ')
                 pass8 = raw_input(' \033[1;92m[8]Password: ')
+	try:
+		r = requests.get("https://graph.facebook.com/me/friends?access_token="+ toket)
+		q = json.loads(r.text)
+		z = q['name']
+			id.append(s['id'])
 		os.system('clear')
 		logo()
-		print "\033[1;97m Please Wait"
+		print"\033[1;97m[✔] Name\033[1;97m:\033[1;97m "+q["name"]
 		jalan('\033[1;97m[✔] Getting IDs \033[1;97m...')
-		r = requests.get("https://graph.facebook.com/me/friends?access_token="+ toket)
-		z = json.loads(r.text)
-		for s in z['data']:
-			id.append(s['id'])
+	except (KeyError, IOError):
+		print ''
+                print '\t Invalid user \x1b[0;97m'
+                print ''
+                raw_input(' \033[1;92mPress enter to try again ')
+		super()
+		
 	elif peak =="2":
                 os.system('clear')
                 logo()
@@ -296,18 +304,23 @@ def pilih_super():
                 idt = raw_input(' \033[1;93m[★]Enter id: ')
 		
 	try:
-		jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
-		op = json.loads(jok.text)
+		r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+toket)
+		q = json.loads(r.text)
+		z = q['name']
+			id.append(i['id']))
 		print"\033[1;97m[✔] Name\033[1;97m:\033[1;97m"op+nama"
 	except KeyError:
 		print"\x1b[1;97mID Not Found!"
 		raw_input("\n\033[1;97m[\033[1;97mBack\033[1;97m]")
-		super()
 		print"\033[1;97m[✔] Getting IDs..."
-		r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+toket)
-		z = json.loads(r.text)
-		for i in z['data']:
-			id.append(i['id'])
+		super()
+	        r = requests.get('https://graph.facebook.com/' + idt + '/friends?access_token=' + token)
+                z = json.loads(r.text)
+                for i in z['data']:
+                    uid = i['id']
+                    na = i['name']
+                    nm = na.rsplit(' ')[0]
+                    id.append(uid + '|' + nm)
 	if peak =="3":
                 os.system('clear')
                 logo()
