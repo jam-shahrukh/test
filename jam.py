@@ -458,8 +458,8 @@ print ('[!] To Stop Process Press CTRL Then Z')
                                                    cp.write(uid + ' | ' + pass8 + '\n')
                                                    cp.close()
                                                    cps.apppend(uid + pass8)
-        except:
-            pass
+		except:
+			pass
 		
     p = ThreadPool(30)
     p.map(main, id)
