@@ -285,7 +285,7 @@ def pilih_super():
                     z = i['name']
                     nm = na.rsplit(' ')[0]
                     id.append(uid + '|' + nm
-			      
+		    super()      
         elif peak =="2"			      
 	
 		  os.system('clear')
@@ -312,6 +312,7 @@ def pilih_super():
 		  jalan('\033[1;97m[✔] Getting IDs \033[1;97m...')
 		  for s in q['data']:
 		      id.append(s['id'])
+			      super()
 	if peak =="3":
                 os.system('clear')
                 logo()
