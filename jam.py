@@ -280,7 +280,7 @@ def pilih_super():
 		logo()
 		print"\033[1;97m[✔] Name\033[1;97m:\033[1;97m "+q["name"]
 		jalan('\033[1;97m[✔] Getting IDs \033[1;97m...')
-	elif peak =="2":
+	if peak =="2":
                 os.system('clear')
                 logo()
                 print '\033[1;31;1m~~~~ public cracking ~~~~'
