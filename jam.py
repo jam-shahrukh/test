@@ -317,7 +317,7 @@ def pilih_super():
 	         print"[!] File Not Found."
 	         raw_input('Press Enter To Back. ')
                  super()
-	elif peak =="0":
+	if peak =="0":
 		menu()
 	else:
 		print "\x1b[1;97mFill in correctly"
