@@ -287,9 +287,6 @@ def pilih_super():
                     id.append(uid + '|' + nm
 			      
 	if peak =="2"
-			      
-		print '\033[1;31;1m~~~~ public cracking ~~~~'
-                print ''
                 print '\033[1;93m For example: 123 , 1234 , 1234, 786 , 12 , 1122'
                 print ''
                 p1 = raw_input(' \033[1;92m[1]Name + digit: ')
