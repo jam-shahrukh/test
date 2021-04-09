@@ -285,10 +285,7 @@ def pilih_super():
                     z = i['name']
                     nm = na.rsplit(' ')[0]
                     id.append(uid + '|' + nm
-			      super()
-		          
-        elif peak =="2"			      
-	
+	if peak =="2":
 		  os.system('clear')
 		  logo()
 		  print '\033[1;31;1m~~~~ public cracking ~~~~'
