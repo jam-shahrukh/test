@@ -256,7 +256,8 @@ def pilih_super():
           id = []
           cps = []
           oks = []
-        if peak =="1"
+	peak = raw_input("\n\033[1;97mChoose Option ≻ \033[1;97m")
+        if peak =="1":
 		os.system('clear')
 		logo()
 		print "\033[1;97m Please Wait"
@@ -265,7 +266,7 @@ def pilih_super():
 		z = json.loads(r.text)
 		for s in z['data']:
 			id.append(s['id'])
-	elif peak =="2"
+	elif peak =="2":
                 os.system('clear')
                 print logo
                 print '\033[1;31;1m~~~~ public cracking ~~~~'
@@ -296,7 +297,7 @@ def pilih_super():
 		for i in z['data']:
 			id.append(i['id'])
 			
-	elif peak =="3"
+	elif peak =="3":
 		
                 if peak =="2":
                 os.system('clear')
