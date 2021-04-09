@@ -253,9 +253,6 @@ def super():
 	pilih_super()
 
 def pilih_super():
-          id = []
-          cps = []
-          oks = []
 	peak = raw_input("\n\033[1;97mChoose Option ≻ \033[1;97m")
         if peak =="1":
 		os.system('clear')
