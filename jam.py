@@ -274,6 +274,7 @@ def pilih_super():
 		r = requests.get("https://graph.facebook.com/me/friends?access_token="+ toket)
 		q = json.loads(r.text)
 		z = q['name']
+		for s in q['data']:
 			id.append(s['id'])
 		os.system('clear')
 		logo()
