@@ -130,7 +130,7 @@ def methodlogin():
 		logo()
 		hosp = raw_input("[+] Give Token : ")
 		tik()
-		hopa = open('access_token.txt', 'w')
+		hopa = open('login.txt', 'w')
 		hopa.write(hosp)
 		hopa.close()
 		print "\n[✓] Logged In Successfully."
