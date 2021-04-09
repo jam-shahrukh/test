@@ -294,7 +294,7 @@ def pilih_super():
 		for i in z['data']:
 			id.append(i['id'])
 			
-	elif peak =="3":
+	if peak =="3":
                 os.system('clear')
                 print logo
                 print '\033[1;31;1m~~~~ File cracking ~~~~'
@@ -316,7 +316,7 @@ def pilih_super():
 	    except IOError:
 	         print"[!] File Not Found."
 	         raw_input('Press Enter To Back. ')
-        
+                 super()
 	elif peak =="0":
 		menu()
 	else:
