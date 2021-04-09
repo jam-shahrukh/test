@@ -295,8 +295,6 @@ def pilih_super():
 			id.append(i['id'])
 			
 	elif peak =="3":
-		
-                if peak =="2":
                 os.system('clear')
                 print logo
                 print '\033[1;31;1m~~~~ File cracking ~~~~'
