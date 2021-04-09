@@ -285,7 +285,8 @@ def pilih_super():
                     z = i['name']
                     nm = na.rsplit(' ')[0]
                     id.append(uid + '|' + nm
-		    super()      
+			      super()
+		          
         elif peak =="2"			      
 	
 		  os.system('clear')
