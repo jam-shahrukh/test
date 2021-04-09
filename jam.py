@@ -282,10 +282,9 @@ def pilih_super():
 		r = requests.get('https://graph.facebook.com/' + idt + '/friends?access_token=' + token)
                 q = json.loads(r.text)
                 for i in q['data']:
-                uid = i['id']
-                z = i['name']
-                nm = na.rsplit(' ')[0]
-                id.append(uid + '|' + nm
+                    z = i['name']
+                    nm = na.rsplit(' ')[0]
+                    id.append(uid + '|' + nm
 	elif peak =="2":
 		  os.system('clear')
 		  logo()
