@@ -305,11 +305,10 @@ def pilih_super():
 		raw_input("\n\033[1;97m[\033[1;97mBack\033[1;97m]")
 		super()
 		print"\033[1;97m[✔] Getting IDs..."
-		r = requests.get("https://graph.facebook.com/"+idlist+"/friends?access_token="+toket)
+		r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+toket)
 		z = json.loads(r.text)
 		for i in z['data']:
 			id.append(i['id'])
-			
 	if peak =="3":
                 os.system('clear')
                 logo()
@@ -326,8 +325,8 @@ def pilih_super():
                 pass7 = raw_input(' \033[1;92m[7]Password: ')
                 pass8 = raw_input(' \033[1;92m[8]Password: ')
 	try:
-	        idlist= raw_input('[+] File Name: ')
-	        for line in open(idlist ,'r').readlines():
+	        idt= raw_input('[+] File Name: ')
+	        for line in open(idt ,'r').readlines():
 	            id.append(line.strip())
 	except IOError:
 	         print"[!] File Not Found."
