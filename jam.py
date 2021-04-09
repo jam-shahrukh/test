@@ -274,12 +274,13 @@ def pilih_super():
 		r = requests.get("https://graph.facebook.com/me/friends?access_token="+ toket)
 		q = json.loads(r.text)
 		z = q['name']
-		for s in q['data']:
-			id.append(s['id'])
 		os.system('clear')
 		logo()
 		print"\033[1;97m[✔] Name\033[1;97m:\033[1;97m "+q["name"]
 		jalan('\033[1;97m[✔] Getting IDs \033[1;97m...')
+		for s in q['data']:
+			id.append(s['id'])
+		
 	if peak =="2":
                 os.system('clear')
                 logo()
