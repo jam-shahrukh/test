@@ -316,7 +316,6 @@ def pilih_super():
 	    except IOError:
 	         print"[!] File Not Found."
 	         raw_input('Press Enter To Back. ')
-	         super()
         
 	elif peak =="0":
 		menu()
