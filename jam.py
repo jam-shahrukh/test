@@ -287,14 +287,14 @@ def pilih_super():
                     id.append(uid + '|' + nm
 			      
 	if peak =="2"
-                p1 = raw_input(' \033[1;92m[1]Name + digit: ')
-                p2 = raw_input(' \033[1;92m[2]Name + digit: ')
-                p3 = raw_input(' \033[1;92m[3]Name + digit: ')
-                pass4 = raw_input(' \033[1;92m[4]Password: ')
-                pass5 = raw_input(' \033[1;92m[5]Password: ')
-                pass6 = raw_input(' \033[1;92m[6]Password: ')
-                pass7 = raw_input(' \033[1;92m[7]Password: ')
-                pass8 = raw_input(' \033[1;92m[8]Password: ')
+              p1 = raw_input(' \033[1;92m[1]Name + digit: ')
+              p2 = raw_input(' \033[1;92m[2]Name + digit: ')
+              p3 = raw_input(' \033[1;92m[3]Name + digit: ')
+              pass4 = raw_input(' \033[1;92m[4]Password: ')
+              pass5 = raw_input(' \033[1;92m[5]Password: ')
+              pass6 = raw_input(' \033[1;92m[6]Password: ')
+              pass7 = raw_input(' \033[1;92m[7]Password: ')
+              pass8 = raw_input(' \033[1;92m[8]Password: ')
 	try:
 		jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
 		op = json.loads(jok.text)
