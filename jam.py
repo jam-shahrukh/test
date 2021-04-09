@@ -279,8 +279,7 @@ def pilih_super():
 		print"\033[1;97m[✔] Name\033[1;97m:\033[1;97m "+q["name"]
 		jalan('\033[1;97m[✔] Getting IDs \033[1;97m...')
 		for s in q['data']:
-			id.append(s['id'])
-		
+		super()
 	elif peak =="2":
 		  os.system('clear')
 		  logo()
