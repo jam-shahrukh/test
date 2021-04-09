@@ -270,7 +270,6 @@ def pilih_super():
                 pass6 = raw_input(' \033[1;92m[6]Password: ')
                 pass7 = raw_input(' \033[1;92m[7]Password: ')
                 pass8 = raw_input(' \033[1;92m[8]Password: ')
-                idt = raw_input(' \033[1;93m[★]Enter id: ')
 		os.system('clear')
 		logo()
 		print "\033[1;97m Please Wait"
@@ -299,7 +298,7 @@ def pilih_super():
 	try:
 		jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
 		op = json.loads(jok.text)
-		print"\033[1;97m[✔] Name\033[1;97m:\033[1;97m "+op["name"]"
+		print"\033[1;97m[✔] Name\033[1;97m:\033[1;97m"+nama+"
 	except KeyError:
 		print"\x1b[1;97mID Not Found!"
 		raw_input("\n\033[1;97m[\033[1;97mBack\033[1;97m]")
