@@ -309,7 +309,7 @@ def pilih_super():
                 pass6 = raw_input(' \033[1;92m[6]Password: ')
                 pass7 = raw_input(' \033[1;92m[7]Password: ')
                 pass8 = raw_input(' \033[1;92m[8]Password: ')
-	    try:
+	try:
 	        idlist= raw_input('[+] File Name: ')
 	        for line in open(idlist ,'r').readlines():
 	            id.append(line.strip())
