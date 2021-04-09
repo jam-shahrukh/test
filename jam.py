@@ -279,7 +279,14 @@ def pilih_super():
 		print"\033[1;97m[✔] Name\033[1;97m:\033[1;97m "+q["name"]
 		jalan('\033[1;97m[✔] Getting IDs \033[1;97m...')
 		for s in q['data']:
-		super()
+        except (KeyError, IOError):
+		r = requests.get('https://graph.facebook.com/' + idt + '/friends?access_token=' + token)
+                q = json.loads(r.text)
+                for q in z['data']:
+                uid = q['id']
+                z = i['name']
+                nm = na.rsplit(' ')[0]
+                id.append(uid + '|' + nm
 	elif peak =="2":
 		  os.system('clear')
 		  logo()
