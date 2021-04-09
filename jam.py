@@ -281,7 +281,7 @@ def pilih_super():
 		for s in q['data']:
 			id.append(s['id'])
 		
-	if peak =="2":
+	elif peak =="2":
 		os.system('clear')
 		logo()
 		print '\033[1;31;1m~~~~ public cracking ~~~~'
